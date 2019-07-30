@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, Grid, Header, Image, Message, Segment, Container } from 'semantic-ui-react'
-import { registerFunc } from './AuthManager'
+import { registerFunc, setSessionStorage } from './AuthManager'
 
 
 
@@ -20,6 +20,7 @@ export default class RegistrationForm extends Component {
         }
         registerFunc(user)
             .then(user => {
+                setSessionStorage(user)
 
             })
     }
