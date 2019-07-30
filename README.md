@@ -1,3 +1,26 @@
+# Intro to Watch at Home App
+
+Welcome to Watch at Home!  This exciting app allows you to take the movies/shows that you love to watch and find which streamining service offers it.  Not only are you able to  find the shows and movies you want to watch, but this app offers the ability to store them to your own profile so you can watch it later.
+
+# Instructions to Use App
+
+### 1) API keys
+Please refer to the `keyTemplate.js` file to see how the structure is established for the keys page. You will make a copy of the `keyTemplate` javascript page and rename it to `keys.js`.  Then you will need to incorporate your obtained keys.
+
+### Links are here:
+[OMBD](http://www.omdbapi.com/)
+
+[Utelly](https://rapidapi.com/utelly/api/utelly)
+
+
+
+
+
+
+
+---
+## *Below is the general React Template ReadMe info*
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +89,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+
+
