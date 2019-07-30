@@ -30,14 +30,12 @@ export default class RegistrationForm extends Component {
     //this is the form rendered for the registration page
     render() {
         return (
-            <Container>
-                <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
-                    <Grid.Column style={{ maxWidth: 450 }}>
-                        <Header as='h2' color='black' textAlign='center'>
-                            Register for an Account
-              </Header>
+                    <div hidden={!this.props.hidden}>
                         <Form size='large' onSubmit={this.submitReg}>
                             <Segment stacked>
+                        <Header as='h2' color='black' textAlign='center'>
+                            Register for an Account
+                        </Header>
                                 <Form.Input
                                     fluid icon="user circle"
                                     iconPosition='left'
@@ -67,17 +65,13 @@ export default class RegistrationForm extends Component {
 
                                 <Button color='black' fluid size='large'>
                                     Submit
-                  </Button>
+                                </Button>
+                                    <Message>
+                                        New to us? <a href='' onClick={this.props.hideClick}>Sign Up</a>
+                                    </Message>
                             </Segment>
                         </Form>
-                    </Grid.Column>
-                </Grid>
-            </Container>
-
+                        </div>
         )
     }
 }
-
-{/* <Message>
-    New to us? <a href='#'>Sign Up</a>
-</Message> */}

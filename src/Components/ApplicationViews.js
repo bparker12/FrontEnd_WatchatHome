@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-// import { Route, Redirect } from "react-router-dom";
+import { Route } from "react-router-dom";
+import Login from './Auth/Login';
+import WatchComp from '../Components/WatchComp/WatchComp'
 
 
-// export default class ApplicationViews extends Component {
+export default class ApplicationViews extends Component {
 
-//     render() {
-//         return (
+    render() {
+        return (
 
-//             <React.Fragment>
-//                 <Route path="/" render={(props) => { WatchComp }}
-//             </React.Fragment>
-//         )
-//     }
-// }
+            <React.Fragment>
+                <Route path="/" render={(props) => {return <WatchComp {...props} />}} />
+                <Route path="/login" render={(props) => {return <Login {...props} />}} />
+            </React.Fragment>
+        )
+    }
+}
