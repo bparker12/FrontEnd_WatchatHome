@@ -8,7 +8,7 @@ import ApplicationViews from './Components/ApplicationViews'
 class App extends Component {
 
     state = {
-        authenticated: ""
+        authenticated: JSON.parse(sessionStorage.getItem('user'))
     }
 //this function verifies if the user is signed in by checking session storage
     setAuthState = () => {
@@ -19,22 +19,22 @@ class App extends Component {
         }
     }
 
-
+//this renders the dom based on whether a user is logged in or not and session storage has a value for "user"
     render() {
-        // if (this.state.authenticated) {
+        if (this.state.authenticated) {
             return (
                 <React.Fragment>
                     <Navbar user={this.state.authenticated} />
-                    {/* <ApplicationViews  isAuthenticated={this.state.authenticated}        /> */}
+                    <ApplicationViews  isAuthenticated={this.state.authenticated}        />
                 </React.Fragment>
-//             )
-//         } else {
-//             return (
-//                 <React.Fragment>
-//                     <Login setAuthState={this.setAuthState} />
-//                 </React.Fragment>
+            )
+        } else {
+            return (
+                <React.Fragment>
+                    <Login setAuthState={this.setAuthState} />
+                </React.Fragment>
             )
         }
-    // }
+    }
 }
 export default App
