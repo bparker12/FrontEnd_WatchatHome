@@ -19,7 +19,7 @@ const userToJson = (user) => {
 export const loginFunc = (email, password) => {
     return firebase.auth().signInWithEmailAndPassword(email, password)
     .then(data => data.user.uid)
-    .then(userId => APIManger.get("users",userId)
+    .then(userId => APIManger.get("users", userId)
     .then(user => {
           setSessionStorage(user)
           return user

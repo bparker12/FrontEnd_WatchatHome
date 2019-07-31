@@ -21,6 +21,8 @@ export default class RegistrationForm extends Component {
         registerFunc(user)
             .then(user => {
                 setSessionStorage(user)
+                this.props.setAuthState()
+                this.props.history.push('/');
 
             })
     }
