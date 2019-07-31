@@ -21,7 +21,8 @@ export default class Login extends Component {
             });
     }
 
-    hideClick = () => {
+    hideClick = (evt) => {
+        evt.preventDefault()
         this.setState({ hidden: !this.state.hidden })
         console.log("it works!")
     }
@@ -42,6 +43,7 @@ export default class Login extends Component {
                                         fluid icon='user'
                                         iconPosition='left'
                                         placeholder='E-mail address'
+                                        label='E-mail'
                                         onChange={(evt) => this.setState({ email: evt.target.value })}
                                     />
                                     <Form.Input
@@ -50,6 +52,7 @@ export default class Login extends Component {
                                         iconPosition='left'
                                         placeholder='Password'
                                         type='password'
+                                        label='Password'
                                         onChange={(evt) => this.setState({ password: evt.target.value })}
                                     />
 
