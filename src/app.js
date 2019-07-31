@@ -21,20 +21,20 @@ class App extends Component {
 
 
     render() {
-        if (this.state.authenticated) {
+        // if (this.state.authenticated) {
             return (
                 <React.Fragment>
                     <Navbar user={this.state.authenticated} />
-                    <ApplicationViews  isAuthenticated={this.state.authenticated}        />
+                    {/* <ApplicationViews  isAuthenticated={this.state.authenticated}        /> */}
                 </React.Fragment>
-            )
-        } else {
-            return (
-                <React.Fragment>
-                    <Login setAuthState={this.setAuthState} />
-                </React.Fragment>
+//             )
+//         } else {
+//             return (
+//                 <React.Fragment>
+//                     <Login setAuthState={this.setAuthState} />
+//                 </React.Fragment>
             )
         }
-    }
+    // }
 }
 export default App
