@@ -8,7 +8,8 @@ import ApplicationViews from './Components/ApplicationViews'
 class App extends Component {
 
     state = {
-        authenticated: JSON.parse(sessionStorage.getItem('user'))
+        authenticated: sessionStorage.getItem('user'),
+        currentUser: JSON.parse(sessionStorage.getItem('user'))
     }
 //this function verifies if the user is signed in by checking session storage
     setAuthState = () => {
@@ -24,7 +25,7 @@ class App extends Component {
         if (this.state.authenticated) {
             return (
                 <React.Fragment>
-                    <Navbar user={this.state.authenticated} />
+                    <Navbar currentUser={this.state.currentUser} />
                     <ApplicationViews  isAuthenticated={this.state.authenticated}        />
                 </React.Fragment>
             )

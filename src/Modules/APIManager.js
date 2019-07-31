@@ -1,5 +1,6 @@
 import React from 'react';
 import { get } from 'https';
+import { app_key } from '../keys'
 
 const remoteURL = "http://localhost:8088"
 
@@ -11,6 +12,15 @@ export default {
     getAll(database){
         return fetch(`${remoteURL}/${database}`).then(data => data.json())
     },
+      omdbData(search) {
+        return fetch(`http://www.omdbapi.com/?t=${search}&apikey=${app_key[0].app_key}&r=json&plot=short`)
+        .then(data => data.json())
+      },
+      utellyData(search) {
+        return fetch(`https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=${search}&us`)
+        .then(data => data.json())
+      },
+
     delete (database, id) {
         return fetch(`${remoteURL}/${database}/${id}`, {
             method: "DELETE"
