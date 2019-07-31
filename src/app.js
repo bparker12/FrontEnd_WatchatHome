@@ -8,7 +8,7 @@ import ApplicationViews from './Components/ApplicationViews'
 class App extends Component {
 
     state = {
-        authenticated: sessionStorage.getItem('user')
+        authenticated: JSON.parse(sessionStorage.getItem('user'))
     }
 //this function verifies if the user is signed in by checking session storage
     setAuthState = () => {
