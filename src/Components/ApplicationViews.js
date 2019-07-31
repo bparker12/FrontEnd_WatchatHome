@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Route } from "react-router-dom";
+import { Route, withRouter } from "react-router-dom";
 import Login from './Auth/Login';
 import WatchComp from '../Components/WatchComp/WatchComp'
 
 
-export default class ApplicationViews extends Component {
+class ApplicationViews extends Component {
 
     state = {
         currentUser: sessionStorage.getItem('user')
@@ -23,3 +23,4 @@ export default class ApplicationViews extends Component {
         )
     }
 }
+export default withRouter(ApplicationViews)

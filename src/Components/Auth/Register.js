@@ -22,7 +22,7 @@ export default class RegistrationForm extends Component {
             .then(user => {
                 setSessionStorage(user)
                 this.props.setAuthState()
-                this.props.history.push('/');
+                // this.props.history.push('/');
 
             })
     }
@@ -51,7 +51,7 @@ export default class RegistrationForm extends Component {
                                     fluid icon='envelope  square'
                                     iconPosition='left'
                                     type='email'
-                                    label="E-Mail"
+                                    label="E-mail"
                                     placeholder='E-mail address'
                                     onChange={(evt) => this.setState({ email: evt.target.value })}
                                 />
