@@ -21,8 +21,14 @@ export default {
   get(database, id) {
     return fetch(`${remoteURL}/${database}/${id}`).then(data => data.json())
   },
-  getAll(database) {
-    return fetch(`${remoteURL}/${database}`).then(data => data.json())
+  getAll(database, queryParams) {
+    // return fetch(`${remoteURL}/${database}`)
+    let url = `${remoteURL}/${database}`
+    if (queryParams) {
+      url += `?${queryParams}`
+    }
+    return fetch(url)
+    .then( data => data.json() )
   },
   omdbData(search) {
     return fetch(`http://www.omdbapi.com/?t=${search}&apikey=${app_key[0].app_key}&r=json&plot=short`)

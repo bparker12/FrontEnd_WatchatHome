@@ -14,7 +14,7 @@ class ApplicationViews extends Component {
         return (
 
             <React.Fragment>
-                <Route path="/" render={(props) => {return <WatchComp {...props} />}} />
+                <Route path="/" render={(props) => {return <WatchComp {...props} currentUser={this.state.currentUser}    />}} />
                 <Route path="/login"
                     render={props =>{
                          return (
