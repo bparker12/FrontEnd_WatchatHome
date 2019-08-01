@@ -4,7 +4,7 @@ import 'semantic-ui-css/semantic.min.css'
 import Navbar from './Components/Nav/Navbar'
 import ApplicationViews from './Components/ApplicationViews'
 import APIManager from './Modules/APIManager'
-import { Card, Modal, Button } from 'semantic-ui-react';
+import { Card, Modal, Button, Icon, Header } from 'semantic-ui-react';
 
 
 
@@ -20,7 +20,7 @@ class App extends Component {
     }
 
     toggle = () => {
-        this.setState({openModal: !this.state.openModal})
+        this.setState({ openModal: !this.state.openModal })
     }
 
 
@@ -39,8 +39,8 @@ class App extends Component {
                 this.setState({ APIinfo: info })
                 console.log(this.state.APIinfo)
             })
-            this.toggle()
-            console.log(this.state.openModal)
+        this.toggle()
+        console.log(this.state.openModal)
     }
 
 
@@ -55,16 +55,23 @@ class App extends Component {
         if (this.state.authenticated) {
             return (
                 <React.Fragment>
-                    <Navbar currentUser={this.state.currentUser} searchData={this.searchData} handleFieldChange={this.handleFieldChange} openModal={this.state.openModal} toggle={this.toggle}/>
-                    <Modal open={this.state.openModal}>
-                        <div className="closeButton">
-                            <Modal.Header>
-                                <Button icon="window close" onClick={this.setState({openModal:!this.state.openModal})}></Button>
-                            </Modal.Header>
-                        </div>
+                    <Navbar currentUser={this.state.currentUser} searchData={this.searchData} handleFieldChange={this.handleFieldChange} openModal={this.state.openModal} toggle={this.toggle} />
+                    <Modal onclose open={this.state.openModal} >
                         <Modal.Content>
                             <Card>
-                                {/* <h2>{this.props.APIinfo.Title}</h2> */}
+                                <Card.Header>{this.state.APIinfo.Title}</Card.Header>
+                                <Card.Meta>Runtime: {this.state.APIinfo.Runtime}</Card.Meta>
+                                <Card.Meta>Year: {this.state.APIinfo.Year}</Card.Meta>
+                                <Card.Content extra>
+                                    <div className='ui two buttons'>
+                                        <Button basic color='green'>
+                                            Add to Watch List
+                                        </Button>
+                                        <Button basic color='red' onClick={this.toggle}>
+                                            No Thanks
+                                         </Button>
+                                    </div>
+                                </Card.Content>
                             </Card>
                         </Modal.Content>
                     </Modal>
