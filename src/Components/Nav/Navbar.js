@@ -22,6 +22,7 @@ export default class Navbar extends Component {
     }
 
     searchData = () => {
+        // APIManager.utellyData()
         APIManager.omdbData(this.state.searchInput)
         .then(info => {
             console.log(info)
