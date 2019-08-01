@@ -4,6 +4,8 @@ import 'semantic-ui-css/semantic.min.css'
 import Navbar from './Components/Nav/Navbar'
 import ApplicationViews from './Components/ApplicationViews'
 import APIManager from './Modules/APIManager'
+import { Card, Modal, Button } from 'semantic-ui-react';
+
 
 
 
@@ -54,7 +56,19 @@ class App extends Component {
             return (
                 <React.Fragment>
                     <Navbar currentUser={this.state.currentUser} searchData={this.searchData} handleFieldChange={this.handleFieldChange} openModal={this.state.openModal} toggle={this.toggle}/>
-                    <searchResults APIinfo={this.state.APIinfo} show={this.state.openModal} onClose={this.toggle} />
+                    <Modal open={this.state.openModal}>
+                        <div className="closeButton">
+                            <Modal.Header>
+                                <Button icon="window close" onClick={this.setState({openModal:!this.state.openModal})}></Button>
+                            </Modal.Header>
+                        </div>
+                        <Modal.Content>
+                            <Card>
+                                {/* <h2>{this.props.APIinfo.Title}</h2> */}
+                            </Card>
+                        </Modal.Content>
+                    </Modal>
+                    {/* <searchResults APIinfo={this.state.APIinfo} show={this.state.openModal} onClose={this.toggle} /> */}
                     <ApplicationViews isAuthenticated={this.state.authenticated} />
                 </React.Fragment>
             )
