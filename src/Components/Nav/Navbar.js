@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { Button, Menu, Icon, Input } from "semantic-ui-react";
-import APIManager from '../../Modules/APIManager';
+import SearchResults from '../SearchResults/SearchResults'
 
 export default class Navbar extends Component {
 
     state ={
-        searchInput: "",
         info: ""
     }
     //this function clears session storage, and upon reload
@@ -15,19 +14,6 @@ export default class Navbar extends Component {
         window.location.reload();
     }
 
-    handleFieldChange = evt => {
-        const stateToChange = {};
-        stateToChange[evt.target.id] = evt.target.value;
-        this.setState(stateToChange);
-    }
-
-    searchData = () => {
-        // APIManager.utellyData()
-        APIManager.omdbData(this.state.searchInput)
-        .then(info => {
-            console.log(info)
-        })
-    }
 
 
     render() {
@@ -41,12 +27,13 @@ export default class Navbar extends Component {
                             </Menu.Item>
                     <Menu.Item>
                         <Input
-                            placeholder='Search...'
+                            placeholder='Search for movie or show...'
                             position='absolute'
                             id="searchInput"
-                            onChange={this.handleFieldChange}
+                            required
+                            onChange={this.props.handleFieldChange}
                         />
-                        <Button icon compact onClick={this.searchData}>
+                        <Button icon compact onClick={this.props.searchData}>
                             <Icon name="search" />
                         </Button>
                     </Menu.Item>
