@@ -34,6 +34,9 @@ class App extends Component {
     }
 
     searchData = () => {
+        if(this.state.searchInput === "") {
+            alert("Surely you are looking for something!")
+        }
         APIManager.omdbData(this.state.searchInput)
             .then((info) => {
                 this.setState({ APIinfo: info })
@@ -50,6 +53,10 @@ class App extends Component {
         this.setState(stateToChange);
     }
 
+    saveCard = (evt) => {
+        console.log("save click works")
+    }
+
     //this renders the dom based on whether a user is logged in or not and session storage has a value for "user"
     render() {
         if (this.state.authenticated) {
@@ -57,20 +64,17 @@ class App extends Component {
                 <React.Fragment>
                     <Navbar currentUser={this.state.currentUser} searchData={this.searchData} handleFieldChange={this.handleFieldChange} openModal={this.state.openModal} toggle={this.toggle} />
                     <Modal onclose open={this.state.openModal} >
+                        <Button className="closeIcon" icon="window close" position="right" onClick={this.toggle} />
                         <Modal.Content>
-                        <Modal.Header><Button icon="window close" position="right" onClick={this.toggle} /></Modal.Header>
                             <Card>
                                 <Card.Header>{this.state.APIinfo.Title}</Card.Header>
                                 <Card.Meta>Runtime: {this.state.APIinfo.Runtime}</Card.Meta>
                                 <Card.Meta>Year: {this.state.APIinfo.Year}</Card.Meta>
                                 <Card.Content extra>
                                     <div className='ui two buttons'>
-                                        <Button basic color='green'>
+                                        <Button basic color='green' onClick={this.saveCard}>
                                             Add to Watch List
                                         </Button>
-                                        {/* <Button basic color='red' onClick={this.toggle}>
-                                            No Thanks
-                                         </Button> */}
                                     </div>
                                 </Card.Content>
                             </Card>
