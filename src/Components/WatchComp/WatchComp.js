@@ -5,14 +5,14 @@ import WatchCard from './WatchCard';
 export default class WatchComp extends Component {
 
     state = {
-        watchList: [],
+        watchlist: [],
     }
 
     componentDidMount() {
         const newstate = {}
 
-        APIManager.getAll("watchList")
-            .then(watchList => newstate.watchList = watchList)
+        APIManager.getAll("watchlist")
+            .then(watchlist => newstate.watchlist = watchlist)
             .then(() => this.setState(newstate))
         }
 
@@ -20,7 +20,7 @@ export default class WatchComp extends Component {
         return (
             <div>
             <Card.Group>
-                <WatchCard watchList={this.state.watchList}/>
+                <WatchCard watchlist={this.props.watchlist}/>
             </Card.Group>
             </div>
         )
