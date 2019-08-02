@@ -1,7 +1,5 @@
 import React from 'react';
-import { get } from 'https';
 import { app_key } from '../keys'
-import { request } from 'http';
 
 
 const remoteURL = "http://localhost:8088"
@@ -58,7 +56,8 @@ export default {
     return fetch(`${remoteURL}/${database}`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        'Accept': 'application/json'
       },
       body: JSON.stringify(newData)
     }).then(data => data.json())
