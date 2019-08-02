@@ -58,6 +58,7 @@ class App extends Component {
                     <Navbar currentUser={this.state.currentUser} searchData={this.searchData} handleFieldChange={this.handleFieldChange} openModal={this.state.openModal} toggle={this.toggle} />
                     <Modal onclose open={this.state.openModal} >
                         <Modal.Content>
+                        <Modal.Header><Button icon="window close" position="right" onClick={this.toggle} /></Modal.Header>
                             <Card>
                                 <Card.Header>{this.state.APIinfo.Title}</Card.Header>
                                 <Card.Meta>Runtime: {this.state.APIinfo.Runtime}</Card.Meta>
@@ -67,9 +68,9 @@ class App extends Component {
                                         <Button basic color='green'>
                                             Add to Watch List
                                         </Button>
-                                        <Button basic color='red' onClick={this.toggle}>
+                                        {/* <Button basic color='red' onClick={this.toggle}>
                                             No Thanks
-                                         </Button>
+                                         </Button> */}
                                     </div>
                                 </Card.Content>
                             </Card>
