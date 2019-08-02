@@ -36,8 +36,8 @@ export default class Navbar extends Component {
                         <Button icon compact onClick={this.props.searchData}>
                             <Icon name="search" />
                         </Button>
-                    </Menu.Item>
                     <Button compact color="orange" postion="right" onClick={this.handleLogOut}>Logout</Button>
+                    </Menu.Item>
                 </Menu>
             </nav>
         )
