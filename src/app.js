@@ -12,14 +12,15 @@ class App extends Component {
         authenticated: sessionStorage.getItem('user'),
         currentUser: JSON.parse(sessionStorage.getItem('user')),
         searchInput: '',
-        APIinfo: '',
-        watchlist:'',
+        APIinfo: [],
+        watchlist: [],
         openModal: false,
     }
 
     toggle = () => {
         this.setState({ openModal: !this.state.openModal })
     }
+
 
 
     //this function verifies if the user is signed in by checking session storage
@@ -30,7 +31,7 @@ class App extends Component {
             this.setState({ authenticated: false })
         }
     }
-
+    //allows a search feature in the database and sets tthe state with the info pulled from API
     searchData = () => {
         if (this.state.searchInput === "") {
             //TODO: Update the alert below
@@ -45,23 +46,24 @@ class App extends Component {
             console.log(this.state.openModal)
         }
     }
-
+    //post function for adding a card to the database
     addCard = (data) => {
         APIManager.post("watchlist", data)
-          .then(() => APIManager.getAll("watchlist"))
-          .then(watch =>
-            this.setState({
-              watchlist: watch
-            }))
-      }
+            .then(() => APIManager.getAll("watchlist"))
+            .then(watch =>
+                this.setState({
+                    watchlist: watch
+                }))
+    }
 
 
+    //this is an event listener that updates the current state based on the characters in the search bar
     handleFieldChange = evt => {
         const stateToChange = {};
         stateToChange[evt.target.id] = evt.target.value;
         this.setState(stateToChange);
     }
-
+    //this function takes certain keys/value from the API data and puts them in an object to be put into the database. then a function is called to post to the database
     saveCard = (evt) => {
         console.log("save click works")
         evt.preventDefault();
@@ -80,7 +82,7 @@ class App extends Component {
             Poster: this.state.APIinfo.Poster,
             Production: this.state.APIinfo.Production,
             Type: this.state.APIinfo.Type,
-            Writer:this.state.APIinfo.Writer,
+            Writer: this.state.APIinfo.Writer,
             imdbID: this.state.APIinfo.imdbID,
             imdbRating: this.state.APIinfo.imdbRating,
         }
@@ -95,12 +97,18 @@ class App extends Component {
         if (this.state.authenticated) {
             return (
                 <React.Fragment>
-                    <Navbar currentUser={this.state.currentUser} searchData={this.searchData} handleFieldChange={this.handleFieldChange} openModal={this.state.openModal} toggle={this.toggle} />
+                    <Navbar
+                    currentUser={this.state.currentUser}
+                    searchData={this.searchData}
+                    handleFieldChange={this.handleFieldChange}
+                    openModal={this.state.openModal}
+                    toggle={this.toggle}
+                    />
                     <Modal onclose open={this.state.openModal} >
                         <Button className="closeIcon" icon="window close" position="right" onClick={this.toggle} />
                         <Modal.Content>
                             <Card>
-                                <Image  src={this.state.APIinfo.Poster} wrapped ui={false} />
+                                <Image src={this.state.APIinfo.Poster} wrapped ui={false} />
                                 <Card.Header>{this.state.APIinfo.Title}</Card.Header>
                                 <Card.Meta>Runtime: {this.state.APIinfo.Runtime}</Card.Meta>
                                 <Card.Meta>Year: {this.state.APIinfo.Year}</Card.Meta>
@@ -115,7 +123,10 @@ class App extends Component {
                         </Modal.Content>
                     </Modal>
                     {/* <searchResults APIinfo={this.state.APIinfo} show={this.state.openModal} onClose={this.toggle} /> */}
-                    <ApplicationViews isAuthenticated={this.state.authenticated} />
+                    <ApplicationViews
+                    currentUser={this.state.currentUser}
+                    isAuthenticated={this.state.authenticated}
+                    />
                 </React.Fragment>
             )
         } else {
