@@ -6,9 +6,6 @@ import ApplicationViews from './Components/ApplicationViews'
 import APIManager from './Modules/APIManager'
 import { Card, Modal, Button, Icon, Header } from 'semantic-ui-react';
 
-
-
-
 class App extends Component {
 
     state = {
@@ -35,8 +32,9 @@ class App extends Component {
 
     searchData = () => {
         if(this.state.searchInput === "") {
+            //TODO: Update the alert below
             alert("Surely you are looking for something!")
-        }
+        } else {
         APIManager.omdbData(this.state.searchInput)
             .then((info) => {
                 this.setState({ APIinfo: info })
@@ -44,6 +42,7 @@ class App extends Component {
             })
         this.toggle()
         console.log(this.state.openModal)
+        }
     }
 
 
