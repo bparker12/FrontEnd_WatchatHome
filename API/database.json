@@ -10,5 +10,14 @@
       "email": "smarty@pants.com",
       "id": "NgZLrvyiPphouvhAv7TBpIrulrD2"
     }
+  ],
+  "watchList": [
+    {
+      "userId": 1,
+      "title": "Interstellar",
+      "genre":"Adventure, Drama, Sci-Fi",
+      "year": "2014",
+      "runtime": "169 min"
+    }
   ]
 }
