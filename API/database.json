@@ -11,13 +11,102 @@
       "id": "NgZLrvyiPphouvhAv7TBpIrulrD2"
     }
   ],
-  "watchList": [
+  "watchlist": [
     {
-      "userId": 1,
-      "title": "Interstellar",
-      "genre":"Adventure, Drama, Sci-Fi",
-      "year": "2014",
-      "runtime": "169 min"
+      "userId": {
+        "username": "dummy",
+        "email": "dummy@aol.com",
+        "id": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1"
+      },
+      "Title": "Top Gun",
+      "Year": "1986",
+      "Rated": "PG",
+      "Runtime": "110 min",
+      "Actors": "Tom Cruise, Kelly McGillis, Val Kilmer, Anthony Edwards",
+      "Awards": "Won 1 Oscar. Another 10 wins & 5 nominations.",
+      "BoxOffice": "N/A",
+      "Director": "Tony Scott",
+      "Genre": "Action, Drama",
+      "Plot": "As students at the United States Navy's elite fighter weapons school compete to be best in the class, one daring young pilot learns a few things from a civilian instructor that are not taught in the classroom.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZjQxYTA3ODItNzgxMy00N2Y2LWJlZGMtMTRlM2JkZjI1ZDhhXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
+      "Production": "Paramount Pictures",
+      "Type": "movie",
+      "Writer": "Jim Cash, Jack Epps Jr., Ehud Yonay (magazine article \"Top Guns\")",
+      "imdbID": "tt0092099",
+      "imdbRating": "6.9",
+      "id": 1
+    },
+    {
+      "userId": {
+        "username": "dummy",
+        "email": "dummy@aol.com",
+        "id": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1"
+      },
+      "Title": "Jurassic Park",
+      "Year": "1993",
+      "Rated": "PG-13",
+      "Runtime": "127 min",
+      "Actors": "Sam Neill, Laura Dern, Jeff Goldblum, Richard Attenborough",
+      "Awards": "Won 3 Oscars. Another 32 wins & 25 nominations.",
+      "BoxOffice": "$45,299,680",
+      "Director": "Steven Spielberg",
+      "Genre": "Action, Adventure, Sci-Fi, Thriller",
+      "Plot": "During a preview tour, a theme park suffers a major power breakdown that allows its cloned dinosaur exhibits to run amok.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_SX300.jpg",
+      "Production": "Universal City Studios",
+      "Type": "movie",
+      "Writer": "Michael Crichton (novel), Michael Crichton (screenplay), David Koepp (screenplay)",
+      "imdbID": "tt0107290",
+      "imdbRating": "8.1",
+      "id": 2
+    },
+    {
+      "userId": {
+        "username": "dummy",
+        "email": "dummy@aol.com",
+        "id": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1"
+      },
+      "Title": "Jungle Book",
+      "Year": "1990",
+      "Rated": "N/A",
+      "Runtime": "95 min",
+      "Actors": "Julian Bailey, Sonja Ball, Kathleen Fee, Jean Fontaine",
+      "Awards": "N/A",
+      "BoxOffice": "N/A",
+      "Director": "Fumio Kurokawa",
+      "Genre": "Animation, Adventure, Drama",
+      "Plot": "Watch Rudyard Kipling's world famous novel, The Jungle Book, come alive in this high quality entertaining animated feature for your kids and family. Join young Mowgli, and his animal ...",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BODZjYWM1NmItODJhOC00YjQ0LWJmM2UtNzVhNWJkNmU1MTE2XkEyXkFqcGdeQXVyNTM3MDMyMDQ@._V1_SX300.jpg",
+      "Production": "N/A",
+      "Type": "movie",
+      "Writer": "Rudyard Kipling (characters), Rudyard Kipling (novel)",
+      "imdbID": "tt5663482",
+      "imdbRating": "7.1",
+      "id": 3
+    },
+    {
+      "userId": {
+        "username": "dummy",
+        "email": "dummy@aol.com",
+        "id": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1"
+      },
+      "Title": "Mission: Impossible",
+      "Year": "1996",
+      "Rated": "PG-13",
+      "Runtime": "110 min",
+      "Actors": "Tom Cruise, Jon Voight, Emmanuelle Béart, Henry Czerny",
+      "Awards": "3 wins & 14 nominations.",
+      "BoxOffice": "N/A",
+      "Director": "Brian De Palma",
+      "Genre": "Action, Adventure, Thriller",
+      "Plot": "An American agent, under false suspicion of disloyalty, must discover and expose the real spy without the help of his organization.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTc3NjI2MjU0Nl5BMl5BanBnXkFtZTgwNDk3ODYxMTE@._V1_SX300.jpg",
+      "Production": "Paramount Pictures",
+      "Type": "movie",
+      "Writer": "Bruce Geller (television series), David Koepp (story), Steven Zaillian (story), David Koepp (screenplay), Robert Towne (screenplay)",
+      "imdbID": "tt0117060",
+      "imdbRating": "7.1",
+      "id": 4
     }
   ]
 }
