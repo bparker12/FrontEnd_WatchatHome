@@ -30,7 +30,6 @@ class App extends Component {
 
     //removes the card from the database and refreshes the page
     deleteCard = (database, id) => {
-        console.log("delete functino", database, id)
         APIManager.delete(database, id)
             .then(watch =>
                 this.setState({
@@ -93,7 +92,7 @@ class App extends Component {
         // console.log("save click works")
         evt.preventDefault();
         const card = {
-            userId: this.state.currentUser,
+            userId: JSON.parse(sessionStorage.getItem('user')).id,
             Title: this.state.APIinfo.Title,
             Year: this.state.APIinfo.Year,
             Rated: this.state.APIinfo.Rated,
@@ -119,7 +118,7 @@ class App extends Component {
 
     //this renders the dom based on whether a user is logged in or not and session storage has a value for "user"
     render() {
-        console.log('watchlists - app', this.state.watchlists)
+        // console.log('watchlists - app', this.state.watchlists)
         if (this.state.authenticated) {
             return (
                 <React.Fragment>

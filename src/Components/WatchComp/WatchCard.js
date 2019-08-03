@@ -10,7 +10,7 @@ export default class WatchCard extends Component {
   close = () => this.setState({ open: false });
 
     render() {
-        console.log("watchlist props", this.props.watchlist)
+        // console.log("watchlist props", this.props.watchlist)
         return (
             <Card key={this.props.watchlist.id}>
                 <Image src={this.props.watchlist.Poster} wrapped ui={false} />

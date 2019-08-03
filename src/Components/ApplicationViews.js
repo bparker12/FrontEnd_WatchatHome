@@ -8,7 +8,7 @@ class ApplicationViews extends Component {
 
 
     render() {
-        console.log("watchlists appview", this.props.watchlists)
+        // console.log("watchlists appview", this.props.watchlists)
         return (
 
             <React.Fragment>
