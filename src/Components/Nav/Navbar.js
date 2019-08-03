@@ -33,7 +33,7 @@ export default class Navbar extends Component {
                             required
                             onChange={this.props.handleFieldChange}
                         />
-                        <Button icon compact onClick={this.props.searchData}>
+                        <Button icon compact type="submit" onClick={this.props.searchData}>
                             <Icon name="search" />
                         </Button>
                     <Button compact color="orange" postion="right" onClick={this.handleLogOut}>Logout</Button>
