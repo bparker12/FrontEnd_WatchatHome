@@ -3,49 +3,24 @@ import { Card } from 'semantic-ui-react';
 import APIManager from '../../Modules/APIManager';
 import WatchCard from './WatchCard';
 export default class WatchComp extends Component {
-    state = {
-        watchlist: [],
-    }
-    componentDidMount() {
-        const newstate = {}
-        APIManager.getAll("watchlist")
-            .then(watch => newstate.watchlist = watch)
-            .then(() => this.setState(newstate))
-    }
-
-    //removes the card from the database and refreshes the page
-    deleteCard = (database, id) => {
-        APIManager.delete(database, id)
-            .then(watch =>
-                this.setState({
-                    watchlist: watch
-                }))
-    }
-    //update the card review feature
-    updateCard = (editCard) => {
-        return APIManager.put("watchlist", editCard)
-            .then(() => APIManager.getAll("watchlist"))
-            .then(watch => {
-                this.setState({
-                    watchlist: watch
-                })
-            })
-    }
 
     render() {
-        // console.log("current user", this.props.currentUser.id)
-        // console.log("watchlist", this.state.watchlist)
+        console.log("current user", this.props.currentUser.id)
+        console.log("watchlists userId", this.props.watchlists.userId)
+        const currentUser = sessionStorage.getItem('user')
         return (
             <React.Fragment>
                 <div>
                     <h1>Saved Movies</h1>
                         <Card.Group wrapped itemsPerRow={2} >
-                    {this.state.watchlist.filter(watchlist => watchlist.userId.id === this.props.currentUser.id).map(watchlist => (
-                            <WatchCard key={watchlist.id}
+                        {this.props.watchlists.filter(watchlist => watchlist.userId.id === currentUser).map(watchlist => (
+                            <div key={watchlist.id}>
+                            <WatchCard
                                 watchlist={watchlist}
-                                deleteCard={this.state.deleteCard}
-                                updateCard={this.state.updateCard}
+                                deleteCard={this.props.deleteCard}
+                                updateCard={this.props.updateCard}
                             />
+                            </div>
                             ))
                     }
                         </Card.Group>

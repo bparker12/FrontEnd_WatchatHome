@@ -11,7 +11,79 @@
       "id": "NgZLrvyiPphouvhAv7TBpIrulrD2"
     }
   ],
-  "watchlist": [
+  "watchlists": [
+    {
+      "userId": {
+        "username": "dummy",
+        "email": "dummy@aol.com",
+        "id": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1"
+      },
+      "Title": "Harry Potter and the Deathly Hallows: Part 2",
+      "Year": "2011",
+      "Rated": "PG-13",
+      "Runtime": "130 min",
+      "Actors": "Ralph Fiennes, Michael Gambon, Alan Rickman, Daniel Radcliffe",
+      "Awards": "Nominated for 3 Oscars. Another 45 wins & 91 nominations.",
+      "BoxOffice": "$381,000,185",
+      "Director": "David Yates",
+      "Genre": "Adventure, Drama, Fantasy, Mystery",
+      "Plot": "Harry, Ron, and Hermione search for Voldemort's remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMjIyZGU4YzUtNDkzYi00ZDRhLTljYzctYTMxMDQ4M2E0Y2YxXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg",
+      "Production": "Warner Bros. Pictures",
+      "Type": "movie",
+      "Writer": "Steve Kloves (screenplay), J.K. Rowling (novel)",
+      "imdbID": "tt1201607",
+      "imdbRating": "8.1",
+      "id": 1
+    },
+    {
+      "userId": {
+        "username": "dummy",
+        "email": "dummy@aol.com",
+        "id": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1"
+      },
+      "Title": "Harry Potter and the Sorcerer's Stone",
+      "Year": "2001",
+      "Rated": "PG",
+      "Runtime": "152 min",
+      "Actors": "Richard Harris, Maggie Smith, Robbie Coltrane, Saunders Triplets",
+      "Awards": "Nominated for 3 Oscars. Another 17 wins & 62 nominations.",
+      "BoxOffice": "$317,557,891",
+      "Director": "Chris Columbus",
+      "Genre": "Adventure, Family, Fantasy",
+      "Plot": "An orphaned boy enrolls in a school of wizardry, where he learns the truth about himself, his family and the terrible evil that haunts the magical world.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNjQ3NWNlNmQtMTE5ZS00MDdmLTlkZjUtZTBlM2UxMGFiMTU3XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg",
+      "Production": "Warner Bros. Pictures",
+      "Type": "movie",
+      "Writer": "J.K. Rowling (novel), Steve Kloves (screenplay)",
+      "imdbID": "tt0241527",
+      "imdbRating": "7.6",
+      "id": 2
+    },
+    {
+      "userId": {
+        "username": "dummy",
+        "email": "dummy@aol.com",
+        "id": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1"
+      },
+      "Title": "Harry Potter and the Goblet of Fire",
+      "Year": "2005",
+      "Rated": "PG-13",
+      "Runtime": "157 min",
+      "Actors": "Eric Sykes, Timothy Spall, David Tennant, Daniel Radcliffe",
+      "Awards": "Nominated for 1 Oscar. Another 13 wins & 42 nominations.",
+      "BoxOffice": "$289,994,397",
+      "Director": "Mike Newell",
+      "Genre": "Adventure, Family, Fantasy, Mystery",
+      "Plot": "A young wizard finds himself competing in a hazardous tournament between rival schools of magic, but he is distracted by recurring nightmares.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTI1NDMyMjExOF5BMl5BanBnXkFtZTcwOTc4MjQzMQ@@._V1_SX300.jpg",
+      "Production": "Warner Bros. Pictures",
+      "Type": "movie",
+      "Writer": "Steve Kloves (screenplay), J.K. Rowling (novel)",
+      "imdbID": "tt0330373",
+      "imdbRating": "7.7",
+      "id": 3
+    },
     {
       "userId": {
         "username": "dummy",
@@ -34,103 +106,7 @@
       "Writer": "Jim Cash, Jack Epps Jr., Ehud Yonay (magazine article \"Top Guns\")",
       "imdbID": "tt0092099",
       "imdbRating": "6.9",
-      "id": 1
-    },
-    {
-      "userId": {
-        "username": "dummy",
-        "email": "dummy@aol.com",
-        "id": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1"
-      },
-      "Title": "Jurassic Park",
-      "Year": "1993",
-      "Rated": "PG-13",
-      "Runtime": "127 min",
-      "Actors": "Sam Neill, Laura Dern, Jeff Goldblum, Richard Attenborough",
-      "Awards": "Won 3 Oscars. Another 32 wins & 25 nominations.",
-      "BoxOffice": "$45,299,680",
-      "Director": "Steven Spielberg",
-      "Genre": "Action, Adventure, Sci-Fi, Thriller",
-      "Plot": "During a preview tour, a theme park suffers a major power breakdown that allows its cloned dinosaur exhibits to run amok.",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_SX300.jpg",
-      "Production": "Universal City Studios",
-      "Type": "movie",
-      "Writer": "Michael Crichton (novel), Michael Crichton (screenplay), David Koepp (screenplay)",
-      "imdbID": "tt0107290",
-      "imdbRating": "8.1",
-      "id": 2
-    },
-    {
-      "userId": {
-        "username": "dummy",
-        "email": "dummy@aol.com",
-        "id": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1"
-      },
-      "Title": "Jungle Book",
-      "Year": "1990",
-      "Rated": "N/A",
-      "Runtime": "95 min",
-      "Actors": "Julian Bailey, Sonja Ball, Kathleen Fee, Jean Fontaine",
-      "Awards": "N/A",
-      "BoxOffice": "N/A",
-      "Director": "Fumio Kurokawa",
-      "Genre": "Animation, Adventure, Drama",
-      "Plot": "Watch Rudyard Kipling's world famous novel, The Jungle Book, come alive in this high quality entertaining animated feature for your kids and family. Join young Mowgli, and his animal ...",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BODZjYWM1NmItODJhOC00YjQ0LWJmM2UtNzVhNWJkNmU1MTE2XkEyXkFqcGdeQXVyNTM3MDMyMDQ@._V1_SX300.jpg",
-      "Production": "N/A",
-      "Type": "movie",
-      "Writer": "Rudyard Kipling (characters), Rudyard Kipling (novel)",
-      "imdbID": "tt5663482",
-      "imdbRating": "7.1",
-      "id": 3
-    },
-    {
-      "userId": {
-        "username": "dummy",
-        "email": "dummy@aol.com",
-        "id": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1"
-      },
-      "Title": "Mission: Impossible",
-      "Year": "1996",
-      "Rated": "PG-13",
-      "Runtime": "110 min",
-      "Actors": "Tom Cruise, Jon Voight, Emmanuelle Béart, Henry Czerny",
-      "Awards": "3 wins & 14 nominations.",
-      "BoxOffice": "N/A",
-      "Director": "Brian De Palma",
-      "Genre": "Action, Adventure, Thriller",
-      "Plot": "An American agent, under false suspicion of disloyalty, must discover and expose the real spy without the help of his organization.",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMTc3NjI2MjU0Nl5BMl5BanBnXkFtZTgwNDk3ODYxMTE@._V1_SX300.jpg",
-      "Production": "Paramount Pictures",
-      "Type": "movie",
-      "Writer": "Bruce Geller (television series), David Koepp (story), Steven Zaillian (story), David Koepp (screenplay), Robert Towne (screenplay)",
-      "imdbID": "tt0117060",
-      "imdbRating": "7.1",
       "id": 4
-    },
-    {
-      "userId": {
-        "username": "dummy",
-        "email": "dummy@aol.com",
-        "id": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1"
-      },
-      "Title": "Forrest Gump",
-      "Year": "1994",
-      "Rated": "PG-13",
-      "Runtime": "142 min",
-      "Actors": "Tom Hanks, Rebecca Williams, Sally Field, Michael Conner Humphreys",
-      "Awards": "Won 6 Oscars. Another 40 wins & 67 nominations.",
-      "BoxOffice": "$330,000,000",
-      "Director": "Robert Zemeckis",
-      "Genre": "Drama, Romance",
-      "Plot": "The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate, and other history unfold through the perspective of an Alabama man with an IQ of 75.",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
-      "Production": "Paramount Pictures",
-      "Type": "movie",
-      "Writer": "Winston Groom (novel), Eric Roth (screenplay)",
-      "imdbID": "tt0109830",
-      "imdbRating": "8.8",
-      "id": 5
     }
   ]
 }

@@ -13,7 +13,7 @@ class App extends Component {
         currentUser: JSON.parse(sessionStorage.getItem('user')),
         searchInput: '',
         APIinfo: [],
-        watchlist: [],
+        watchlists: [],
         openModal: false,
     }
 
@@ -21,7 +21,32 @@ class App extends Component {
         this.setState({ openModal: !this.state.openModal })
     }
 
+    componentDidMount() {
+        const newstate = {}
+        APIManager.getAll("watchlists")
+            .then(watch => newstate.watchlists = watch)
+            .then(() => this.setState(newstate))
+    }
 
+    //removes the card from the database and refreshes the page
+    deleteCard = (database, id) => {
+        console.log("delete functino", database, id)
+        APIManager.delete(database, id)
+            .then(watch =>
+                this.setState({
+                    watchlists: watch
+                }))
+    }
+    //update the card review feature
+    updateCard = (editCard) => {
+        return APIManager.put("watchlists", editCard)
+            .then(() => APIManager.getAll("watchlists"))
+            .then(watch => {
+                this.setState({
+                    watchlists: watch
+                })
+            })
+    }
 
     //this function verifies if the user is signed in by checking session storage
     setAuthState = () => {
@@ -40,19 +65,19 @@ class App extends Component {
             APIManager.omdbData(this.state.searchInput)
                 .then((info) => {
                     this.setState({ APIinfo: info })
-                    console.log(this.state.APIinfo)
+                    // console.log(this.state.APIinfo)
                 })
             this.toggle()
-            console.log(this.state.openModal)
+            // console.log(this.state.openModal)
         }
     }
     //post function for adding a card to the database
     addCard = (data) => {
-        APIManager.post("watchlist", data)
-            .then(() => APIManager.getAll("watchlist"))
+        APIManager.post("watchlists", data)
+            .then(() => APIManager.getAll("watchlists"))
             .then(watch =>
                 this.setState({
-                    watchlist: watch
+                    watchlists: watch
                 }))
     }
 
@@ -65,7 +90,7 @@ class App extends Component {
     }
     //this function takes certain keys/value from the API data and puts them in an object to be put into the database. then a function is called to post to the database
     saveCard = (evt) => {
-        console.log("save click works")
+        // console.log("save click works")
         evt.preventDefault();
         const card = {
             userId: this.state.currentUser,
@@ -87,13 +112,14 @@ class App extends Component {
             imdbRating: this.state.APIinfo.imdbRating,
         }
         this.addCard(card)
-        console.log("state of watchlist", this.state.watchlist)
+        // console.log("state of watchlists", this.state.watchlists)
         //TODO: if there are multiple results, remove the this.toggle
         this.toggle()
     }
 
     //this renders the dom based on whether a user is logged in or not and session storage has a value for "user"
     render() {
+        console.log('watchlists - app', this.state.watchlists)
         if (this.state.authenticated) {
             return (
                 <React.Fragment>
@@ -126,6 +152,9 @@ class App extends Component {
                     <ApplicationViews
                     currentUser={this.state.currentUser}
                     isAuthenticated={this.state.authenticated}
+                    watchlists={this.state.watchlists}
+                    deleteCard={this.deleteCard}
+                    updateCard={this.updateCard}
                     />
                 </React.Fragment>
             )
