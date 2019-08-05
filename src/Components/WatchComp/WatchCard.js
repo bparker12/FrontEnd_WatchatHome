@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Image, Button, Confirm } from 'semantic-ui-react';
-import Favorites from './Favorites';
+import Favorites from './Favorites/Favorites';
 
 export default class WatchCard extends Component {
 
