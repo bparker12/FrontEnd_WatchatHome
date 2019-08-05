@@ -90,7 +90,7 @@ class App extends Component {
     //this function takes certain keys/value from the API data and puts them in an object to be put into the database. then a function is called to post to the database
     saveCard = (evt) => {
         // console.log("save click works")
-        evt.preventDefault();
+            
         const card = {
             userId: JSON.parse(sessionStorage.getItem('user')).id,
             Title: this.state.APIinfo.Title,

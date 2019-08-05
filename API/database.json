@@ -35,6 +35,12 @@
     }
   ],
   "reviews": [
-    
+    {
+      "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
+      "imdbID": "tt0164184",
+      "Title": "The Sum of All Fears",
+      "reviewText": "great movie!",
+      "id": 1
+    }
   ]
 }

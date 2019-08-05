@@ -25,7 +25,7 @@ export default class WatchCard extends Component {
                     <Card.Meta>Year: {this.props.watchlist.Year}</Card.Meta>
                 </Card.Content>
                 <Card.Content>
-                    <Review />
+                    <Review watchlist={this.props.watchlist} />
                 </Card.Content>
                 <Card.Content>
                 <Button onClick={this.open}>
