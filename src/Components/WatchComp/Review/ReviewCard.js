@@ -10,9 +10,11 @@ export default class ReviewCard extends Component {
 
 
     render() {
+        console.log(this.props.watchlist)
+        
         return (
             <div>
-            
+
             </div>
         )
     }
