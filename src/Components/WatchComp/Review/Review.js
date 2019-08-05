@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import{ Form, Button, Message } from 'semantic-ui-react'
 import ReviewAdd from './ReviewAdd'
 import APIManager from '../../../Modules/APIManager'
+import ReviewCard from './ReviewCard'
 
 export default class Review extends Component {
 
@@ -51,9 +52,8 @@ export default class Review extends Component {
                                 reviewText={this.state.reviewText}
                                 />
                             </div>
+                                <ReviewCard watchlist={this.props.watchlist}/>
                         </React.Fragment>
-
-
                 </Form>
             </div>
         )

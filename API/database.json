@@ -32,15 +32,72 @@
       "imdbID": "tt0164184",
       "imdbRating": "6.4",
       "favorite": true
+    },
+    {
+      "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
+      "Title": "Jack Reacher",
+      "Year": "2012",
+      "Rated": "PG-13",
+      "Runtime": "130 min",
+      "Actors": "Tom Cruise, Rosamund Pike, Richard Jenkins, David Oyelowo",
+      "Awards": "1 win & 5 nominations.",
+      "BoxOffice": "$80,033,643",
+      "Director": "Christopher McQuarrie",
+      "Genre": "Action, Crime, Thriller",
+      "Plot": "A homicide investigator digs deeper into a case involving a trained military sniper who shot five random victims.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTM1NjUxMDI3OV5BMl5BanBnXkFtZTcwNjg1ODM3OA@@._V1_SX300.jpg",
+      "Production": "Paramount Pictures",
+      "Type": "movie",
+      "Writer": "Lee Child (based on the book \"One Shot\" by), Christopher McQuarrie (written for the screen by)",
+      "imdbID": "tt0790724",
+      "imdbRating": "7.0",
+      "favorite": false,
+      "id": 2
+    },
+    {
+      "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
+      "Title": "Game of Thrones",
+      "Year": "2011–",
+      "Rated": "TV-MA",
+      "Runtime": "57 min",
+      "Actors": "Peter Dinklage, Lena Headey, Emilia Clarke, Kit Harington",
+      "Awards": "Won 1 Golden Globe. Another 273 wins & 454 nominations.",
+      "Director": "N/A",
+      "Genre": "Action, Adventure, Drama, Fantasy, Romance",
+      "Plot": "Nine noble families fight for control over the mythical lands of Westeros, while an ancient enemy returns after being dormant for thousands of years.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMjA5NzA5NjMwNl5BMl5BanBnXkFtZTgwNjg2OTk2NzM@._V1_SX300.jpg",
+      "Type": "series",
+      "Writer": "David Benioff, D.B. Weiss",
+      "imdbID": "tt0944947",
+      "imdbRating": "9.5",
+      "favorite": false,
+      "id": 3
     }
   ],
   "reviews": [
     {
       "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
+      "watchId": 1,
       "imdbID": "tt0164184",
       "Title": "The Sum of All Fears",
-      "reviewText": "great movie!",
+      "reviewText": "Great Movie!!!",
       "id": 1
+    },
+    {
+      "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
+      "watchId": 3,
+      "imdbID": "tt0944947",
+      "Title": "Game of Thrones",
+      "reviewText": "the show started off strong!",
+      "id": 2
+    },
+    {
+      "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
+      "watchId": 2,
+      "imdbID": "tt0790724",
+      "Title": "Jack Reacher",
+      "reviewText": "ok movie",
+      "id": 3
     }
   ]
 }
