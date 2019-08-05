@@ -77,5 +77,14 @@ export default {
       body: JSON.stringify(editedItem)
     }).then(data => data.json());
   },
+  patch(database, id, boolean) {
+    return fetch(`${remoteURL}/${database}/${id}`, {
+      method: "Patch",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(boolean)
+    }).then(data => data.json());
+  },
 
 }

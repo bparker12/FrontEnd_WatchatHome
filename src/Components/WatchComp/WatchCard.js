@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Image, Button, Confirm } from 'semantic-ui-react';
+import Favorites from './Favorites';
 
 export default class WatchCard extends Component {
 
@@ -13,6 +14,9 @@ export default class WatchCard extends Component {
         // console.log("watchlist props", this.props.watchlist)
         return (
             <Card key={this.props.watchlist.id}>
+                <Card.Content>
+                    <Favorites watchlist={this.props.watchlist} updateCard={this.props.updateCard} />
+                </Card.Content>
                 <Image src={this.props.watchlist.Poster} wrapped ui={false} />
                 <Card.Content>
                     <Card.Header>{this.props.watchlist.Title}</Card.Header>

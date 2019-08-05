@@ -11,7 +11,7 @@ export default class WatchComp extends Component {
         return (
             <React.Fragment>
                 <div>
-                    <h1>Saved Movies</h1>
+                    <h1>Saved Movies & Shows</h1>
                         <Card.Group wrapped itemsPerRow={2} >
                         {this.props.watchlists.filter(watchlist => watchlist.userId === currentUser.id).map(watchlist => (
                             <div key={watchlist.id}>

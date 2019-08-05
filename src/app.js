@@ -109,6 +109,7 @@ class App extends Component {
             Writer: this.state.APIinfo.Writer,
             imdbID: this.state.APIinfo.imdbID,
             imdbRating: this.state.APIinfo.imdbRating,
+            favorite: false,
         }
         this.addCard(card)
         // console.log("state of watchlists", this.state.watchlists)
