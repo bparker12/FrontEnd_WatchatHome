@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Image, Button, Confirm } from 'semantic-ui-react';
 import Favorites from './Favorites/Favorites';
+import Review from './Review/Review'
 
 export default class WatchCard extends Component {
 
@@ -22,6 +23,9 @@ export default class WatchCard extends Component {
                     <Card.Header>{this.props.watchlist.Title}</Card.Header>
                     <Card.Meta>Runtime: {this.props.watchlist.Runtime}</Card.Meta>
                     <Card.Meta>Year: {this.props.watchlist.Year}</Card.Meta>
+                </Card.Content>
+                <Card.Content>
+                    <Review />
                 </Card.Content>
                 <Card.Content>
                 <Button onClick={this.open}>
