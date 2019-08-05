@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Rating, } from 'semantic-ui-react';
-import APIManager from '../../Modules/APIManager';
+import APIManager from '../../../Modules/APIManager';
 
 
 
