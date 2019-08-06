@@ -16,6 +16,7 @@ export default class Review extends Component {
         review: []
     }
 
+    //this renders the data for the reviews to the Dom
     componentDidMount() {
         const newstate = {}
         APIManager.getAll("reviews")
@@ -23,6 +24,7 @@ export default class Review extends Component {
             .then(() => this.setState(newstate))
     }
 
+    //function to post the reviews to the dom and re-render
     addReview = (data) => {
         APIManager.post("reviews", data)
             .then(() => APIManager.getAll("reviews"))
@@ -32,10 +34,11 @@ export default class Review extends Component {
                 }))
     }
 
+    //this toggles the hidden state
     handleReviewClick = () => {
         this.setState({ hidden: !this.state.hidden })
     }
-
+    //allows the review text to be put into state 
     handleFieldChange = evt => {
         const stateToChange = {};
         stateToChange[evt.target.id] = evt.target.value;
@@ -43,34 +46,39 @@ export default class Review extends Component {
     }
 
     render() {
-        // console.log("ids", this.props.watchlist.id)
-        return (
-            <div>
-                <Form>
-                    <React.Fragment>
-                        <div hidden={this.state.hidden}>
-                            <Button compact onClick={this.handleReviewClick}>Add a Review</Button>
-                        </div>
-                        <div hidden={!this.state.hidden}>
-                            <ReviewAdd
-                                handleReviewClick={this.handleReviewClick}
-                                handleFieldChange={this.handleFieldChange}
-                                addReview={this.addReview}
-                                watchlist={this.props.watchlist}
-                                reviewText={this.state.reviewText}
-                            />
-                        </div>
-                    </React.Fragment>
-                </Form>
-                <Message >
-                    {
-                        this.state.review.filter(review => review.watchId === this.props.watchlist.id).map(review =>
-                            <ReviewCard watchlist={this.props.watchlist} review={review} reviewComp={this.reviewComp} />
-                        )
-                    }
-                </Message>
-            </div>
-        )
+        if (this.state.review.find(review => review.watchId === this.props.watchlist.id)) {
+            return (
+                <div>
+                    <Message >
+                        {
+                            this.state.review.filter(review => review.watchId === this.props.watchlist.id).map(review =>
+                                <ReviewCard watchlist={this.props.watchlist} review={review} reviewComp={this.reviewComp} />
+                            )}
+                    </Message>
+                </div>)
+        } else {
+            return (
+                <div>
+                    <Form>
+                        <React.Fragment>
+                            <div hidden={this.state.hidden}>
+                                <Button compact onClick={this.handleReviewClick}>Add a Review</Button>
+                            </div>
+                            <div hidden={!this.state.hidden}>
+                                <ReviewAdd
+                                    handleReviewClick={this.handleReviewClick}
+                                    handleFieldChange={this.handleFieldChange}
+                                    addReview={this.addReview}
+                                    watchlist={this.props.watchlist}
+                                    reviewText={this.state.reviewText}
+                                />
+                            </div>
+                        </React.Fragment>
+                    </Form>
+                </div>
+            )
+        }
     }
 }
+
 
