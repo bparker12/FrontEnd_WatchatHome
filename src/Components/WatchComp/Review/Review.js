@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Button, Message, Header, Container } from 'semantic-ui-react'
+import { Form, Button, Message, Header, Container, Reveal, Icon } from 'semantic-ui-react'
 import ReviewAdd from './ReviewAdd'
 import APIManager from '../../../Modules/APIManager'
 import ReviewCard from './ReviewCard'
@@ -44,6 +44,14 @@ export default class Review extends Component {
                 }))
     }
 
+    deleteReview = (database, id) => {
+        APIManager.delete(database, id)
+            .then(review =>
+                this.setState({
+                    review: review
+                }))
+    }
+
     //this toggles the hidden state
     handleReviewClick = () => {
         this.setState({ hidden: !this.state.hidden })
@@ -60,14 +68,23 @@ export default class Review extends Component {
         if (this.state.review.find(review => review.watchId === this.props.watchlist.id)) {
             return (
                 <div>
-                <Header as="h5" content={headerCont} />
+                    <Header size="medium" content={headerCont} />
                     <Container>
                         {
                             this.state.review.filter(review => review.watchId === this.props.watchlist.id).map(review =>
-                                <ReviewCard watchlist={this.props.watchlist}
-                                review={review}
-                                reviewComp={this.reviewComp}
-                                updateReviewDB={this.updateReviewDB} />
+                            <div>
+
+                                <Button style={{ padding: "2px", margin: "0px" }} icon size="tiny" onClick={() => this.deleteReview("reviews", review.id)}>
+                                    <Icon name="window close" size="small" />
+                                </Button>
+                                <div>
+                                    <ReviewCard watchlist={this.props.watchlist}
+                                        review={review}
+                                        reviewComp={this.reviewComp}
+                                        updateReviewDB={this.updateReviewDB}
+                                        deleteReview={this.deleteReview} />
+                                </div>
+                            </div>
                             )}
                     </Container>
                 </div>)
@@ -96,4 +113,5 @@ export default class Review extends Component {
     }
 }
 
+//this code was not working for the delete, just going to go with a button for now
 
