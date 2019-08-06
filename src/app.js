@@ -110,6 +110,7 @@ class App extends Component {
             imdbID: this.state.APIinfo.imdbID,
             imdbRating: this.state.APIinfo.imdbRating,
             favorite: false,
+            watched: false,
         }
         this.addCard(card)
         // console.log("state of watchlists", this.state.watchlists)
