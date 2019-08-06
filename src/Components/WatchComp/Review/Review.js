@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Button, Message } from 'semantic-ui-react'
+import { Form, Button, Message, Header, Container } from 'semantic-ui-react'
 import ReviewAdd from './ReviewAdd'
 import APIManager from '../../../Modules/APIManager'
 import ReviewCard from './ReviewCard'
@@ -14,6 +14,16 @@ export default class Review extends Component {
         reviewText: "",
         hidden: false,
         review: []
+    }
+
+    updateReviewDB = (editCard) => {
+        return APIManager.put("reviews", editCard)
+            .then(() => APIManager.getAll("reviews"))
+            .then(review => {
+                this.setState({
+                    review: review
+                })
+            })
     }
 
     //this renders the data for the reviews to the Dom
@@ -38,7 +48,7 @@ export default class Review extends Component {
     handleReviewClick = () => {
         this.setState({ hidden: !this.state.hidden })
     }
-    //allows the review text to be put into state 
+    //allows the review text to be put into state
     handleFieldChange = evt => {
         const stateToChange = {};
         stateToChange[evt.target.id] = evt.target.value;
@@ -46,15 +56,20 @@ export default class Review extends Component {
     }
 
     render() {
+        let headerCont = JSON.parse(sessionStorage.getItem('user')).username + "'s review:"
         if (this.state.review.find(review => review.watchId === this.props.watchlist.id)) {
             return (
                 <div>
-                    <Message >
+                <Header as="h5" content={headerCont} />
+                    <Container>
                         {
                             this.state.review.filter(review => review.watchId === this.props.watchlist.id).map(review =>
-                                <ReviewCard watchlist={this.props.watchlist} review={review} reviewComp={this.reviewComp} />
+                                <ReviewCard watchlist={this.props.watchlist}
+                                review={review}
+                                reviewComp={this.reviewComp}
+                                updateReviewDB={this.updateReviewDB} />
                             )}
-                    </Message>
+                    </Container>
                 </div>)
         } else {
             return (

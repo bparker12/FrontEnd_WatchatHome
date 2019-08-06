@@ -71,7 +71,7 @@
       "Writer": "David Benioff, D.B. Weiss",
       "imdbID": "tt0944947",
       "imdbRating": "9.5",
-      "favorite": false
+      "favorite": true
     },
     {
       "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
@@ -114,6 +114,27 @@
       "imdbRating": "8.3",
       "favorite": false,
       "id": 5
+    },
+    {
+      "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
+      "Title": "Toy Story 2",
+      "Year": "1999",
+      "Rated": "G",
+      "Runtime": "92 min",
+      "Actors": "Tom Hanks, Tim Allen, Joan Cusack, Kelsey Grammer",
+      "Awards": "Nominated for 1 Oscar. Another 20 wins & 26 nominations.",
+      "BoxOffice": "N/A",
+      "Director": "John Lasseter, Ash Brannon(co-director), Lee Unkrich(co-director)",
+      "Genre": "Animation, Adventure, Comedy, Family, Fantasy",
+      "Plot": "When Woody is stolen by a toy collector, Buzz and his friends set out on a rescue mission to save Woody before he becomes a museum toy property with his roundup gang Jessie, Prospector, and Bullseye.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMWM5ZDcxMTYtNTEyNS00MDRkLWI3YTItNThmMGExMWY4NDIwXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg",
+      "Production": "Buena Vista Pictures",
+      "Type": "movie",
+      "Writer": "John Lasseter (original story by), Pete Docter (original story by), Ash Brannon (original story by), Andrew Stanton (original story by), Andrew Stanton (screenplay by), Rita Hsiao (screenplay by), Doug Chamberlin (screenplay by), Chris Webb (screenplay by)",
+      "imdbID": "tt0120363",
+      "imdbRating": "7.9",
+      "favorite": false,
+      "id": 6
     }
   ],
   "reviews": [
@@ -130,7 +151,7 @@
       "watchId": 3,
       "imdbID": "tt0944947",
       "Title": "Game of Thrones",
-      "reviewText": "the show started off strong!",
+      "reviewText": "great show!!",
       "id": 2
     },
     {
