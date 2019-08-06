@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import APIManager from '../../../Modules/APIManager';
-import { Message } from 'semantic-ui-react';
+import { Message, Reveal, Button } from 'semantic-ui-react';
 import ReviewEdit from './ReviewEdit';
 
 export default class ReviewCard extends Component {
@@ -25,6 +25,7 @@ handleHidden = () => {
                 review={this.props.review}
                 handleEditFieldChange={this.handleEditFieldChange}
                 updateReviewDB={this.props.updateReviewDB}
+                deleteReview={this.props.deleteReview}
                   />
             </div>
             </React.Fragment>

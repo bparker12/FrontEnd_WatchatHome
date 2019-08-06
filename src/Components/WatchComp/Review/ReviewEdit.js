@@ -33,7 +33,7 @@ export default class ReviewEdit extends Component {
     updateReview = evt => {
         evt.preventDefault()
         if (this.state.reviewText === "") {
-            this.props.handleHidden()
+            this.props.deleteReview("reviews", this.props.review.id)
         } else {
             const editReview = {
                 userId: JSON.parse(sessionStorage.getItem('user')).id,

@@ -137,46 +137,5 @@
       "id": 6
     }
   ],
-  "reviews": [
-    {
-      "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
-      "watchId": 1,
-      "imdbID": "tt0164184",
-      "Title": "The Sum of All Fears",
-      "reviewText": "Great Movie!!!",
-      "id": 1
-    },
-    {
-      "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
-      "watchId": 3,
-      "imdbID": "tt0944947",
-      "Title": "Game of Thrones",
-      "reviewText": "great show!!",
-      "id": 2
-    },
-    {
-      "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
-      "watchId": 2,
-      "imdbID": "tt0790724",
-      "Title": "Jack Reacher",
-      "reviewText": "ok movie",
-      "id": 3
-    },
-    {
-      "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
-      "watchId": 4,
-      "imdbID": "tt0942385",
-      "Title": "Tropic Thunder",
-      "reviewText": "funny!",
-      "id": 4
-    },
-    {
-      "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
-      "watchId": 5,
-      "imdbID": "tt0114709",
-      "Title": "Toy Story",
-      "reviewText": "good flick!",
-      "id": 5
-    }
-  ]
+  "reviews": []
 }
