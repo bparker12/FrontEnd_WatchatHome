@@ -40,7 +40,8 @@ export default class Favorites extends Component {
             Writer: this.props.watchlist.Writer,
             imdbID: this.props.watchlist.imdbID,
             imdbRating: this.props.watchlist.imdbRating,
-            favorite: !this.props.watchlist.favorite
+            favorite: !this.props.watchlist.favorite,
+            watched: this.props.watchlist.watched
         }
         this.props.updateCard(favorite)
     }
