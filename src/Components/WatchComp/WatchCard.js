@@ -14,7 +14,7 @@ export default class WatchCard extends Component {
     render() {
         // console.log("watchlist props", this.props.watchlist)
         return (
-            <Card key={this.props.watchlist.id}>
+            <Card key={this.props.watchlist.id} raised>
                 <Card.Content>
                     <Favorites watchlist={this.props.watchlist} updateCard={this.props.updateCard} />
                 </Card.Content>

@@ -34,6 +34,7 @@
       "favorite": true
     },
     {
+      "id": 2,
       "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
       "Title": "Jack Reacher",
       "Year": "2012",
@@ -51,10 +52,10 @@
       "Writer": "Lee Child (based on the book \"One Shot\" by), Christopher McQuarrie (written for the screen by)",
       "imdbID": "tt0790724",
       "imdbRating": "7.0",
-      "favorite": false,
-      "id": 2
+      "favorite": false
     },
     {
+      "id": 3,
       "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
       "Title": "Game of Thrones",
       "Year": "2011–",
@@ -70,8 +71,70 @@
       "Writer": "David Benioff, D.B. Weiss",
       "imdbID": "tt0944947",
       "imdbRating": "9.5",
+      "favorite": true
+    },
+    {
+      "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
+      "Title": "Tropic Thunder",
+      "Year": "2008",
+      "Rated": "R",
+      "Runtime": "107 min",
+      "Actors": "Jeff Kahn, Robert Downey Jr., Anthony Ruivivar, Jack Black",
+      "Awards": "Nominated for 1 Oscar. Another 10 wins & 43 nominations.",
+      "BoxOffice": "$110,416,702",
+      "Director": "Ben Stiller",
+      "Genre": "Action, Adventure, Comedy, War",
+      "Plot": "Through a series of freak occurrences, a group of actors shooting a big-budget war movie are forced to become the soldiers they are portraying.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNDE5NjQzMDkzOF5BMl5BanBnXkFtZTcwODI3ODI3MQ@@._V1_SX300.jpg",
+      "Production": "DreamWorks/Paramount Studios",
+      "Type": "movie",
+      "Writer": "Justin Theroux (screenplay), Ben Stiller (screenplay), Etan Cohen (screenplay), Ben Stiller (story), Justin Theroux (story)",
+      "imdbID": "tt0942385",
+      "imdbRating": "7.0",
       "favorite": false,
-      "id": 3
+      "id": 4
+    },
+    {
+      "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
+      "Title": "Toy Story",
+      "Year": "1995",
+      "Rated": "G",
+      "Runtime": "81 min",
+      "Actors": "Tom Hanks, Tim Allen, Don Rickles, Jim Varney",
+      "Awards": "Nominated for 3 Oscars. Another 23 wins & 17 nominations.",
+      "BoxOffice": "N/A",
+      "Director": "John Lasseter",
+      "Genre": "Animation, Adventure, Comedy, Family, Fantasy",
+      "Plot": "A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_SX300.jpg",
+      "Production": "Buena Vista",
+      "Type": "movie",
+      "Writer": "John Lasseter (original story by), Pete Docter (original story by), Andrew Stanton (original story by), Joe Ranft (original story by), Joss Whedon (screenplay by), Andrew Stanton (screenplay by), Joel Cohen (screenplay by), Alec Sokolow (screenplay by)",
+      "imdbID": "tt0114709",
+      "imdbRating": "8.3",
+      "favorite": false,
+      "id": 5
+    },
+    {
+      "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
+      "Title": "Toy Story 2",
+      "Year": "1999",
+      "Rated": "G",
+      "Runtime": "92 min",
+      "Actors": "Tom Hanks, Tim Allen, Joan Cusack, Kelsey Grammer",
+      "Awards": "Nominated for 1 Oscar. Another 20 wins & 26 nominations.",
+      "BoxOffice": "N/A",
+      "Director": "John Lasseter, Ash Brannon(co-director), Lee Unkrich(co-director)",
+      "Genre": "Animation, Adventure, Comedy, Family, Fantasy",
+      "Plot": "When Woody is stolen by a toy collector, Buzz and his friends set out on a rescue mission to save Woody before he becomes a museum toy property with his roundup gang Jessie, Prospector, and Bullseye.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMWM5ZDcxMTYtNTEyNS00MDRkLWI3YTItNThmMGExMWY4NDIwXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg",
+      "Production": "Buena Vista Pictures",
+      "Type": "movie",
+      "Writer": "John Lasseter (original story by), Pete Docter (original story by), Ash Brannon (original story by), Andrew Stanton (original story by), Andrew Stanton (screenplay by), Rita Hsiao (screenplay by), Doug Chamberlin (screenplay by), Chris Webb (screenplay by)",
+      "imdbID": "tt0120363",
+      "imdbRating": "7.9",
+      "favorite": false,
+      "id": 6
     }
   ],
   "reviews": [
@@ -88,7 +151,7 @@
       "watchId": 3,
       "imdbID": "tt0944947",
       "Title": "Game of Thrones",
-      "reviewText": "the show started off strong!",
+      "reviewText": "great show!!",
       "id": 2
     },
     {
@@ -98,6 +161,22 @@
       "Title": "Jack Reacher",
       "reviewText": "ok movie",
       "id": 3
+    },
+    {
+      "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
+      "watchId": 4,
+      "imdbID": "tt0942385",
+      "Title": "Tropic Thunder",
+      "reviewText": "funny!",
+      "id": 4
+    },
+    {
+      "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
+      "watchId": 5,
+      "imdbID": "tt0114709",
+      "Title": "Toy Story",
+      "reviewText": "good flick!",
+      "id": 5
     }
   ]
 }

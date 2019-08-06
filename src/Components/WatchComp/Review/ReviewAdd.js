@@ -5,6 +5,7 @@ import { objectMethod } from '@babel/types';
 
 export default class ReviewAdd extends Component {
 
+    //this function posts the review object to the database
     postReview = (evt) => {
         evt.preventDefault();
         if (this.props.reviewText === "") {
