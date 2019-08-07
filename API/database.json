@@ -13,7 +13,6 @@
   ],
   "watchlists": [
     {
-      "id": 1,
       "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
       "Title": "Inception",
       "Year": "2010",
@@ -31,18 +30,10 @@
       "Writer": "Christopher Nolan",
       "imdbID": "tt1375666",
       "imdbRating": "8.8",
-      "favorite": true,
-      "watched": true
-    }
-  ],
-  "reviews": [
-    {
-      "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
-      "watchId": 7,
-      "imdbID": "tt0472181",
-      "Title": "The Smurfs",
-      "reviewText": "meh",
+      "favorite": false,
+      "watched": false,
       "id": 1
     }
-  ]
+  ],
+  "reviews": []
 }
