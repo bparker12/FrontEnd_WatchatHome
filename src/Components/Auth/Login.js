@@ -30,8 +30,9 @@ export default class Login extends Component {
     render() {
         return (
             <div>
-                <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle' >
-                    <Grid.Column style={{ maxWidth: 450 }}>
+                <Grid textAlign='center' style={{ height: '100vh', background: 'black'}} verticalAlign='middle' >
+                    <Grid.Column style={{ maxWidth: 350, position: 'sticky' }}>
+                        <h1 style={{ color: 'white' }}>Welcome to <br></br>Watch at Home!</h1>
                         <RegistrationForm hidden={this.state.hidden} hideClick={this.hideClick} setAuthState={this.props.setAuthState} {...this.props} />
                         <div hidden={this.state.hidden}>
                             <Form size='large' onSubmit={this.submitLog} >
@@ -68,7 +69,7 @@ export default class Login extends Component {
                     </Grid.Column>
                 </Grid>
             </div>
-         )
+        )
     }
 
 }

@@ -16,6 +16,7 @@ class App extends Component {
         APIinfo: [],
         watchlists: [],
         openModal: false,
+        value: ''
     }
 
     toggle = () => {
@@ -67,6 +68,7 @@ class App extends Component {
                     this.setState({ APIinfo: info })
                     // console.log(this.state.APIinfo)
                 })
+                this.setState({value:""})
             this.toggle()
             // console.log(this.state.openModal)
         }
@@ -144,6 +146,7 @@ class App extends Component {
                     watchlists={this.state.watchlists}
                     deleteCard={this.deleteCard}
                     updateCard={this.updateCard}
+                    value={this.state.value}
                     />
                 </React.Fragment>
             )

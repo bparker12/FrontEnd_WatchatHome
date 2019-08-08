@@ -70,7 +70,7 @@ export default class WatchCard extends Component {
         // console.log("watchlist props", this.props.watchlist)
         let checkLabel = this.checkboxLabel()
         return (
-            <Card key={this.props.watchlist.id} raised>
+            <Card key={this.props.watchlist.id} raised  style={{'width': 300, 'padding': 3, 'margin': 2,}} >
                 <Card.Content textAlign="left" style={{ 'padding': 5 }}>
                     {/* <Dropdown icon="list alternate outline">
                         <Dropdown.Menu>
@@ -81,6 +81,7 @@ export default class WatchCard extends Component {
                 </Card.Content>
                 <Dimmer.Dimmable
                     as={Image}
+                    style={{'width': 295,}}
                     src={this.props.watchlist.Poster}
                     wrapped ui={false}
                     dimmed={active}

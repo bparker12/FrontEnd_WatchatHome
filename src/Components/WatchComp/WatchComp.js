@@ -8,9 +8,9 @@ export default class WatchComp extends Component {
     render() {
         const currentUser = JSON.parse(sessionStorage.getItem('user'))
         // console.log("watchlists userId", this.props.watchlists)
-        console.log("user id", currentUser.id, "watchlists id")
+        // console.log("user id", currentUser.id, "watchlists id")
         let splashPage = this.props.watchlists.filter(watchlist => watchlist.userId === currentUser.id)
-        console.log("splashpage", splashPage)
+        // console.log("splashpage", splashPage)
         if (splashPage.length === 0) {
             return (
                 <SplashPage />
@@ -20,7 +20,7 @@ export default class WatchComp extends Component {
                 <React.Fragment>
                     <div>
                         <h1>Saved Movies & Shows</h1>
-                        <Card.Group wrapped itemsPerRow={2} >
+                        <Card.Group wrapped itemsPerRow={2} style={{'margin': 1}} >
                             {this.props.watchlists.filter(watchlist => watchlist.userId === currentUser.id).map(watchlist => (
                                 <div key={watchlist.id}>
                                     <WatchCard

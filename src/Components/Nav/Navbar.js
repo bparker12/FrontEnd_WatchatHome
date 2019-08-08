@@ -5,7 +5,7 @@ import SearchResults from '../SearchResults/SearchResults'
 export default class Navbar extends Component {
 
     state = {
-        info: ""
+        info: "",
     }
     //this function clears session storage, and upon reload
     handleLogOut = () => {
@@ -31,11 +31,11 @@ export default class Navbar extends Component {
                     </Menu.Item>
                     <Menu.Item>
                         <Input
+                            value={this.props.value}
                             style={{ 'width': 300}}
                             placeholder='Search for movie or show...'
                             position='absolute'
                             id="searchInput"
-                            required
                             onChange={this.props.handleFieldChange}
                             action={{icon: 'search', onClick: () => this.props.searchData()}}
                         />

@@ -37,4 +37,6 @@ export const registerFunc = (user) => {
         delete user.password
         return userToJson(user)
     })
+    .then(user => {
+        sessionStorage.setItem('user', JSON.stringify(user))})
 }
