@@ -57,6 +57,7 @@
       "watched": true
     },
     {
+      "id": 5,
       "userId": "NgZLrvyiPphouvhAv7TBpIrulrD2",
       "Title": "Step Brothers",
       "Year": "2008",
@@ -75,17 +76,16 @@
       "imdbID": "tt0838283",
       "imdbRating": "6.9",
       "favorite": false,
-      "watched": false,
-      "id": 5
+      "watched": true
     }
   ],
   "reviews": [
     {
       "userId": "NgZLrvyiPphouvhAv7TBpIrulrD2",
-      "watchId": 4,
-      "imdbID": "tt1375666",
-      "Title": "Inception",
-      "reviewText": "Great Movie!",
+      "watchId": 5,
+      "imdbID": "tt0838283",
+      "Title": "Step Brothers",
+      "reviewText": "Really Funny!",
       "id": 1
     }
   ]

@@ -134,7 +134,7 @@ class App extends Component {
                     openModal={this.state.openModal}
                     toggle={this.toggle}
                     />
-                    <Modal onclose open={this.state.openModal} size="small" centered={false} >
+                    <Modal onclose open={this.state.openModal} size="small" centered={false } >
                         <SearchResults toggle={this.toggle} APIinfo={this.state.APIinfo} saveCard={this.saveCard} />
                     </Modal>
                     {/* <searchResults APIinfo={this.state.APIinfo} show={this.state.openModal} onClose={this.toggle} /> */}

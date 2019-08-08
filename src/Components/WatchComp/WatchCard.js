@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Card, Image, Button, Confirm, Checkbox, Dimmer, Header, Modal, Container } from 'semantic-ui-react';
+import { Card, Image, Button, Confirm, Checkbox, Dimmer, Header, Modal, Container, Dropdown } from 'semantic-ui-react';
 import Favorites from './Favorites/Favorites';
 import Review from './Review/Review'
-import  './WatchCard.css'
+import './WatchCard.css'
 import WatchDetails from './WatchDetails';
 
 export default class WatchCard extends Component {
@@ -56,13 +56,13 @@ export default class WatchCard extends Component {
         const content = (
             <div>
                 <Header as='h2' inverted>
-                  Addtional Details
+                    Addtional Details
               </Header>
                 <Modal trigger={<Button>View</Button>}>
                     <Modal.Header>{this.props.watchlist.Title}</Modal.Header>
                     <Modal.Content image scrolling>
-                        <Image size='medium' src={this.props.watchlist.Poster} wrapped/>
-                            <WatchDetails watchlist={this.props.watchlist} />
+                        <Image size='medium' src={this.props.watchlist.Poster} wrapped />
+                        <WatchDetails watchlist={this.props.watchlist} />
                     </Modal.Content>
                 </Modal>
             </div>
@@ -71,7 +71,12 @@ export default class WatchCard extends Component {
         let checkLabel = this.checkboxLabel()
         return (
             <Card key={this.props.watchlist.id} raised>
-                <Card.Content textAlign="right" style={{ 'padding': 4 }}>
+                <Card.Content textAlign="left" style={{ 'padding': 5 }}>
+                    {/* <Dropdown icon="list alternate outline">
+                        <Dropdown.Menu>
+                            <Dropdown.Item />
+                        </Dropdown.Menu>
+                    </Dropdown> */}
                     <Favorites watchlist={this.props.watchlist} updateCard={this.props.updateCard} />
                 </Card.Content>
                 <Dimmer.Dimmable
