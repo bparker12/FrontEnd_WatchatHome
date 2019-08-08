@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Button, Menu, Icon, Input } from "semantic-ui-react";
+import { Button, Menu, Icon, Input, Dropdown } from "semantic-ui-react";
 import SearchResults from '../SearchResults/SearchResults'
 
 export default class Navbar extends Component {
 
-    state ={
-        info: ""
+    state = {
+        info: "",
     }
     //this function clears session storage, and upon reload
     handleLogOut = () => {
@@ -20,23 +20,25 @@ export default class Navbar extends Component {
         let username = JSON.parse(sessionStorage.getItem("user")).username
         return (
             <nav className="navBar">
-                <Menu  fixed pointing secondary >
+                <Menu fixed pointing secondary className="Menu" >
                     <Menu.Item header as="h3" position="left">
-                        <Icon name="user" />
+                        <Dropdown icon="user">
+                            <Dropdown.Menu>
+                                <Dropdown.Item text="Logout" onClick={this.handleLogOut} />
+                            </Dropdown.Menu>
+                        </Dropdown>
                         Welcome {username}
-                            </Menu.Item>
+                    </Menu.Item>
                     <Menu.Item>
                         <Input
+                            value={this.props.value}
+                            style={{ 'width': 300}}
                             placeholder='Search for movie or show...'
                             position='absolute'
                             id="searchInput"
-                            required
                             onChange={this.props.handleFieldChange}
+                            action={{icon: 'search', onClick: () => this.props.searchData()}}
                         />
-                        <Button icon compact type="submit" onClick={this.props.searchData}>
-                            <Icon name="search" />
-                        </Button>
-                    <Button compact color="orange" postion="right" onClick={this.handleLogOut}>Logout</Button>
                     </Menu.Item>
                 </Menu>
             </nav>

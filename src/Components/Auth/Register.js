@@ -19,12 +19,9 @@ export default class RegistrationForm extends Component {
             password: this.state.password
         }
         registerFunc(user)
-            .then(user => {
-                setSessionStorage(user)
-                this.props.setAuthState()
+            .then(() => this.props.setAuthState())
                 // this.props.history.push('/');
 
-            })
     }
 
 
@@ -32,7 +29,7 @@ export default class RegistrationForm extends Component {
     //this is the form rendered for the registration page
     render() {
         return (
-                    <div hidden={!this.props.hidden}>
+                    <div hidden={!this.props.hidden} style={{'backgroundColor': "black"}}>
                         <Form size='large' onSubmit={this.submitReg}>
                             <Segment stacked>
                         <Header as='h2' color='black' textAlign='center'>
@@ -69,7 +66,7 @@ export default class RegistrationForm extends Component {
                                     Submit
                                 </Button>
                                     <Message>
-                                        New to us? <a href='' onClick={this.props.hideClick}>Sign Up</a>
+                                        Already a member? <a href='' onClick={this.props.hideClick}>Go back to login</a>
                                     </Message>
                             </Segment>
                         </Form>

@@ -1,0 +1,8 @@
+.navBar{
+    display: flex;
+    ;
+}
+.Menu{
+    display: flex;
+    justify-content: space-between;
+}

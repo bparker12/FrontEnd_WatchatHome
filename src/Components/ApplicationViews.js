@@ -10,7 +10,6 @@ class ApplicationViews extends Component {
     render() {
         // console.log("watchlists appview", this.props.watchlists)
         return (
-
             <React.Fragment>
                 <Route path="/" render={(props) => {
                     return <WatchComp {...props}

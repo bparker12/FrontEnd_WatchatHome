@@ -5,6 +5,7 @@ import Navbar from './Components/Nav/Navbar'
 import ApplicationViews from './Components/ApplicationViews'
 import APIManager from './Modules/APIManager'
 import { Card, Modal, Button, Icon, Header, Image } from 'semantic-ui-react';
+import SearchResults from './Components/SearchResults/SearchResults';
 
 class App extends Component {
 
@@ -15,6 +16,7 @@ class App extends Component {
         APIinfo: [],
         watchlists: [],
         openModal: false,
+        value: ''
     }
 
     toggle = () => {
@@ -66,6 +68,7 @@ class App extends Component {
                     this.setState({ APIinfo: info })
                     // console.log(this.state.APIinfo)
                 })
+                this.setState({value:""})
             this.toggle()
             // console.log(this.state.openModal)
         }
@@ -89,7 +92,8 @@ class App extends Component {
     }
     //this function takes certain keys/value from the API data and puts them in an object to be put into the database. then a function is called to post to the database
     saveCard = (evt) => {
-        // console.log("save click works")
+        let evtId = evt.target.id
+        console.log("save click works", evt.target.id)
 
         const card = {
             userId: JSON.parse(sessionStorage.getItem('user')).id,
@@ -112,11 +116,12 @@ class App extends Component {
             favorite: false,
             watched: false,
         }
-        this.addCard(card)
-        // console.log("state of watchlists", this.state.watchlists)
-        //TODO: if there are multiple results, remove the this.toggle
-        this.toggle()
-    }
+                this.addCard(card)
+                // console.log("state of watchlists", this.state.watchlists)
+                //TODO: if there are multiple results, remove the this.toggle
+                this.toggle()
+            }
+
 
     //this renders the dom based on whether a user is logged in or not and session storage has a value for "user"
     render() {
@@ -131,23 +136,8 @@ class App extends Component {
                     openModal={this.state.openModal}
                     toggle={this.toggle}
                     />
-                    <Modal onclose open={this.state.openModal} >
-                        <Button className="closeIcon" icon="window close" position="right" onClick={this.toggle} />
-                        <Modal.Content>
-                            <Card>
-                                <Image src={this.state.APIinfo.Poster} wrapped ui={false} />
-                                <Card.Header>{this.state.APIinfo.Title}</Card.Header>
-                                <Card.Meta>Runtime: {this.state.APIinfo.Runtime}</Card.Meta>
-                                <Card.Meta>Year: {this.state.APIinfo.Year}</Card.Meta>
-                                <Card.Content extra>
-                                    <div className='ui two buttons'>
-                                        <Button basic color='green' onClick={this.saveCard}>
-                                            Add to Watch List
-                                        </Button>
-                                    </div>
-                                </Card.Content>
-                            </Card>
-                        </Modal.Content>
+                    <Modal onclose open={this.state.openModal} size="small" centered={false } >
+                        <SearchResults toggle={this.toggle} APIinfo={this.state.APIinfo} saveCard={this.saveCard} />
                     </Modal>
                     {/* <searchResults APIinfo={this.state.APIinfo} show={this.state.openModal} onClose={this.toggle} /> */}
                     <ApplicationViews
@@ -156,6 +146,7 @@ class App extends Component {
                     watchlists={this.state.watchlists}
                     deleteCard={this.deleteCard}
                     updateCard={this.updateCard}
+                    value={this.state.value}
                     />
                 </React.Fragment>
             )
