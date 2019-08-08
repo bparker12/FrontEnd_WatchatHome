@@ -13,7 +13,30 @@
   ],
   "watchlists": [
     {
-      "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
+      "userId": "NgZLrvyiPphouvhAv7TBpIrulrD2",
+      "Title": "Interstellar",
+      "Year": "2014",
+      "Rated": "PG-13",
+      "Runtime": "169 min",
+      "Actors": "Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow",
+      "Awards": "Won 1 Oscar. Another 43 wins & 143 nominations.",
+      "BoxOffice": "$158,737,441",
+      "Director": "Christopher Nolan",
+      "Genre": "Adventure, Drama, Sci-Fi",
+      "Plot": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+      "Production": "Paramount Pictures",
+      "Type": "movie",
+      "Writer": "Jonathan Nolan, Christopher Nolan",
+      "imdbID": "tt0816692",
+      "imdbRating": "8.6",
+      "favorite": false,
+      "watched": false,
+      "id": 2
+    },
+    {
+      "id": 4,
+      "userId": "NgZLrvyiPphouvhAv7TBpIrulrD2",
       "Title": "Inception",
       "Year": "2010",
       "Rated": "PG-13",
@@ -30,10 +53,40 @@
       "Writer": "Christopher Nolan",
       "imdbID": "tt1375666",
       "imdbRating": "8.8",
+      "favorite": true,
+      "watched": true
+    },
+    {
+      "userId": "NgZLrvyiPphouvhAv7TBpIrulrD2",
+      "Title": "Step Brothers",
+      "Year": "2008",
+      "Rated": "R",
+      "Runtime": "98 min",
+      "Actors": "Will Ferrell, John C. Reilly, Mary Steenburgen, Richard Jenkins",
+      "Awards": "3 wins & 2 nominations.",
+      "BoxOffice": "$100,468,793",
+      "Director": "Adam McKay",
+      "Genre": "Comedy",
+      "Plot": "Two aimless middle-aged losers still living at home are forced against their will to become roommates when their parents marry.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BODViZDg3ZjYtMzhiYS00YTVkLTk4MzktYWUxMTlkYjc1NjdlXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+      "Production": "Columbia Pictures",
+      "Type": "movie",
+      "Writer": "Will Ferrell (screenplay), Adam McKay (screenplay), Will Ferrell (story), Adam McKay (story), John C. Reilly (story)",
+      "imdbID": "tt0838283",
+      "imdbRating": "6.9",
       "favorite": false,
       "watched": false,
-      "id": 1
+      "id": 5
     }
   ],
-  "reviews": []
+  "reviews": [
+    {
+      "userId": "NgZLrvyiPphouvhAv7TBpIrulrD2",
+      "watchId": 4,
+      "imdbID": "tt1375666",
+      "Title": "Inception",
+      "reviewText": "Great Movie!",
+      "id": 1
+    }
+  ]
 }

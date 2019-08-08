@@ -3,6 +3,7 @@ import { Card, Image, Button, Confirm, Checkbox, Dimmer, Header, Modal, Containe
 import Favorites from './Favorites/Favorites';
 import Review from './Review/Review'
 import  './WatchCard.css'
+import WatchDetails from './WatchDetails';
 
 export default class WatchCard extends Component {
 
@@ -55,33 +56,13 @@ export default class WatchCard extends Component {
         const content = (
             <div>
                 <Header as='h2' inverted>
-                    Details
+                  Addtional Details
               </Header>
                 <Modal trigger={<Button>View</Button>}>
                     <Modal.Header>{this.props.watchlist.Title}</Modal.Header>
                     <Modal.Content image scrolling>
                         <Image size='medium' src={this.props.watchlist.Poster} wrapped/>
-                        <Modal.Description>
-                                <Container>
-                                <Header>{this.props.watchlist.Type} overview</Header>
-                            <ul>
-                                <li><strong>Year</strong>: {this.props.watchlist.Year}</li>
-                                <li><strong>Actors</strong>: {this.props.watchlist.Actors}</li>
-                                <Container >
-                                <li><strong>Plot</strong>: {this.props.watchlist.Plot}</li>
-                                </Container>
-                                <li><strong>Director</strong>: {this.props.watchlist.Director}</li>
-                                <li><strong>Genre</strong>: {this.props.watchlist.Genre}</li>
-                                <li><strong>Rated</strong>: {this.props.watchlist.Rated}</li>
-                                <li><strong>Runtime</strong>: {this.props.watchlist.Runtime}</li>
-                                <li><strong>Awards</strong>: {this.props.watchlist.Awards}</li>
-                                <li><strong>BoxOffice</strong>: {this.props.watchlist.BoxOffice}</li>
-                                <li><strong>Production</strong>: {this.props.watchlist.Production}</li>
-                                <li><strong>Writer</strong>: {this.props.watchlist.Writer}</li>
-                                <li><strong>imdbRating</strong>: {this.props.watchlist.imdbRating}</li>
-                             </ul>
-                                </Container>
-                        </Modal.Description>
+                            <WatchDetails watchlist={this.props.watchlist} />
                     </Modal.Content>
                 </Modal>
             </div>
@@ -90,7 +71,7 @@ export default class WatchCard extends Component {
         let checkLabel = this.checkboxLabel()
         return (
             <Card key={this.props.watchlist.id} raised>
-                <Card.Content>
+                <Card.Content textAlign="right" style={{ 'padding': 4 }}>
                     <Favorites watchlist={this.props.watchlist} updateCard={this.props.updateCard} />
                 </Card.Content>
                 <Dimmer.Dimmable
