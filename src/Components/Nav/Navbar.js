@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Button, Menu, Icon, Input, Dropdown } from "semantic-ui-react";
 import SearchResults from '../SearchResults/SearchResults'
+import { Link, withRouter} from "react-router-dom";
 
-export default class Navbar extends Component {
+
+class Navbar extends Component {
 
     state = {
         info: "",
@@ -24,6 +26,12 @@ export default class Navbar extends Component {
                     <Menu.Item header as="h3" position="left">
                         <Dropdown icon="user">
                             <Dropdown.Menu>
+                                <Dropdown.Item>
+                                    <Link to="/">Home</Link>
+                                </Dropdown.Item>
+                                <Dropdown.Item>
+                                    <Link to="/profile">Profile</Link>
+                                </Dropdown.Item>
                                 <Dropdown.Item text="Logout" onClick={this.handleLogOut} />
                             </Dropdown.Menu>
                         </Dropdown>
@@ -45,3 +53,4 @@ export default class Navbar extends Component {
         )
     }
 }
+export default withRouter(Navbar)
