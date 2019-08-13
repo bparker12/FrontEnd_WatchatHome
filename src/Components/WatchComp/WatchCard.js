@@ -4,18 +4,21 @@ import Favorites from './Favorites/Favorites';
 import Review from './Review/Review'
 import './WatchCard.css'
 import WatchDetails from './WatchDetails';
+import WatchNoReview from './WatchNoReview';
 
 export default class WatchCard extends Component {
 
     state = {
         open: false,
+        disabled: false
     };
+
     handleShow = () => this.setState({ active: true })
     handleHide = () => this.setState({ active: false })
 
     //--For Confirmation Box--//
-    open = () => this.setState({ open: true });
-    close = () => this.setState({ open: false });
+    open = () => this.setState({ open: true, disabled: true });
+    close = () => this.setState({ open: false, disabled: false });
 
     checkboxLabel = () => {
         return (
@@ -69,19 +72,39 @@ export default class WatchCard extends Component {
         )
         // console.log("watchlist props", this.props.watchlist)
         let checkLabel = this.checkboxLabel()
+
+        // return (
+        //     <WatchNoReview
+        //         watchlist={this.props.watchlist}
+        //         disabled={this.state.disabled}
+        //         open={this.open}
+        //         close={this.close}
+        //         updateCard={this.props.updateCard}
+        //         handleHide={this.handleHide}
+        //         handleShow={this.handleShow}
+        //         checkboxLabel={this.checkboxLabel}
+        //         watchedToggle={this.watchedToggle}
+        //         />
+
+        // )
         return (
-            <Card key={this.props.watchlist.id} raised  style={{'width': 300, 'padding': 3, 'margin': 2,}} >
+            <Card key={this.props.watchlist.id} raised style={{ 'width': 250, 'padding': 3, 'margin': 2, }} >
                 <Card.Content textAlign="left" style={{ 'padding': 5 }}>
-                    {/* <Dropdown icon="list alternate outline">
-                        <Dropdown.Menu>
-                            <Dropdown.Item />
+                    <Dropdown icon="list ul" disabled={this.state.disabled}>
+                        <Dropdown.Menu isdisabled={this.state.disabled} >
+                            <Dropdown.Item onClick={this.open}> Remove
+                                <Confirm size="mini" open={this.state.open}
+                                    onCancel={this.close}
+                                    onConfirm={() => this.props.deleteCard("watchlists", this.props.watchlist.id)}
+                                />
+                            </Dropdown.Item>
                         </Dropdown.Menu>
-                    </Dropdown> */}
+                    </Dropdown>
                     <Favorites watchlist={this.props.watchlist} updateCard={this.props.updateCard} />
                 </Card.Content>
                 <Dimmer.Dimmable
                     as={Image}
-                    style={{'width': 295,}}
+                    style={{ 'width': 245, height: 360}}
                     src={this.props.watchlist.Poster}
                     wrapped ui={false}
                     dimmed={active}
@@ -89,23 +112,14 @@ export default class WatchCard extends Component {
                     onMouseEnter={this.handleShow}
                     onMouseLeave={this.handleHide}
                 />
-                <Card.Content>
+                <Card.Content style={{ padding: 8}}>
                     <Checkbox label={checkLabel} defaultChecked={this.props.watchlist.watched} onChange={this.watchedToggle} />
                     <Card.Header>{this.props.watchlist.Title}</Card.Header>
                     <Card.Meta>Runtime: {this.props.watchlist.Runtime}</Card.Meta>
                     <Card.Meta>Year: {this.props.watchlist.Year}</Card.Meta>
                 </Card.Content>
-                <Card.Content>
+                <Card.Content style={{ padding: 5}}>
                     <Review watchlist={this.props.watchlist} />
-                </Card.Content>
-                <Card.Content>
-                    <Button onClick={this.open}>
-                        Remove from Watchlist
-                </Button>
-                    <Confirm size="mini" open={this.state.open}
-                        onCancel={this.close}
-                        onConfirm={() => this.props.deleteCard("watchlists", this.props.watchlist.id)}
-                    />
                 </Card.Content>
             </Card>
         )

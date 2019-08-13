@@ -45,7 +45,7 @@ export default class RegistrationForm extends Component {
                                 >
                                 </Form.Input>
                                 <Form.Input
-                                    fluid icon='envelope  square'
+                                    fluid icon='envelope square'
                                     iconPosition='left'
                                     type='email'
                                     label="E-mail"

@@ -41,7 +41,7 @@ export default class Login extends Component {
                                         Log-in to your account
                                     </Header>
                                     <Form.Input
-                                        fluid icon='user circle'
+                                        fluid icon='envelope'
                                         iconPosition='left'
                                         placeholder='E-mail address'
                                         label='E-mail'
