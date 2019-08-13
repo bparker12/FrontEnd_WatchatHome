@@ -88,7 +88,7 @@ export default class WatchCard extends Component {
 
         // )
         return (
-            <Card key={this.props.watchlist.id} raised style={{ 'width': 300, 'padding': 3, 'margin': 2, }} >
+            <Card key={this.props.watchlist.id} raised style={{ 'width': 250, 'padding': 3, 'margin': 2, }} >
                 <Card.Content textAlign="left" style={{ 'padding': 5 }}>
                     <Dropdown icon="list ul" disabled={this.state.disabled}>
                         <Dropdown.Menu isdisabled={this.state.disabled} >
@@ -98,16 +98,13 @@ export default class WatchCard extends Component {
                                     onConfirm={() => this.props.deleteCard("watchlists", this.props.watchlist.id)}
                                 />
                             </Dropdown.Item>
-                            <Dropdown.Item>
-                                <Review watchlist={this.props.watchlist} />
-                            </Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                     <Favorites watchlist={this.props.watchlist} updateCard={this.props.updateCard} />
                 </Card.Content>
                 <Dimmer.Dimmable
                     as={Image}
-                    style={{ 'width': 295, }}
+                    style={{ 'width': 245, height: 360}}
                     src={this.props.watchlist.Poster}
                     wrapped ui={false}
                     dimmed={active}
@@ -115,11 +112,14 @@ export default class WatchCard extends Component {
                     onMouseEnter={this.handleShow}
                     onMouseLeave={this.handleHide}
                 />
-                <Card.Content>
+                <Card.Content style={{ padding: 8}}>
                     <Checkbox label={checkLabel} defaultChecked={this.props.watchlist.watched} onChange={this.watchedToggle} />
                     <Card.Header>{this.props.watchlist.Title}</Card.Header>
                     <Card.Meta>Runtime: {this.props.watchlist.Runtime}</Card.Meta>
                     <Card.Meta>Year: {this.props.watchlist.Year}</Card.Meta>
+                </Card.Content>
+                <Card.Content style={{ padding: 5}}>
+                    <Review watchlist={this.props.watchlist} />
                 </Card.Content>
             </Card>
         )

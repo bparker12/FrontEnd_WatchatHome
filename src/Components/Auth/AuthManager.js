@@ -2,13 +2,21 @@ import * as firebase from 'firebase/app'
 import "firebase/auth"
 import APIManger from "../../Modules/APIManager"
 
+
+export const getUserFromSessionStorage = () => {
+    const user = sessionStorage.getItem('user');
+
+    if (!user) return null;
+
+    return JSON.parse(user);
+  }
 //this sets the sessionStorage with the info pulled from json or firebase
 export const setSessionStorage = (user) => {
     sessionStorage.setItem('user', JSON.stringify(user))
 }
 
 //this allows the registered user to take the user info and post it to the database
-const userToJson = (user) => {
+export const userToJson = (user) => {
     APIManger.post("users", user)
     .then(newUser => {
         setSessionStorage(newUser)

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Menu, Icon, Input, Dropdown } from "semantic-ui-react";
 import SearchResults from '../SearchResults/SearchResults'
-import { Link, withRouter} from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 // import './NavBar.css'
 
 class Navbar extends Component {
@@ -12,10 +12,9 @@ class Navbar extends Component {
     //this function clears session storage, and upon reload
     handleLogOut = () => {
         sessionStorage.clear()
-        this.props.history.push("/login")
-        // window.location.reload();
+        // this.props.history.push("/login")
+        window.location.reload();
     }
-
 
 
     render() {
@@ -24,8 +23,8 @@ class Navbar extends Component {
             <nav className="navBar">
                 <Menu fixed pointing secondary className="Menu" >
                     <Menu.Item header as="h3" position="left">
-                        <Dropdown icon="user">
-                            <Dropdown.Menu>
+                        <Dropdown icon="film" labeled floating >
+                            <Dropdown.Menu >
                                 <Dropdown.Item as={Link} content="Home" to="/">
                                 </Dropdown.Item>
                                 <Dropdown.Item as={Link} content="Profile" to="/profile">
@@ -33,17 +32,16 @@ class Navbar extends Component {
                                 <Dropdown.Item text="Logout" onClick={this.handleLogOut} />
                             </Dropdown.Menu>
                         </Dropdown>
-                        Welcome {this.props.currentUser.username}
                     </Menu.Item>
                     <Menu.Item>
                         <Input
                             value={this.props.value}
-                            style={{ 'width': 300}}
+                            style={{ 'width': 300 }}
                             placeholder='Search for movie or show...'
                             position='absolute'
                             id="searchInput"
                             onChange={this.props.handleFieldChange}
-                            action={{icon: 'search', onClick: () => this.props.searchData()}}
+                            action={{ icon: 'search', onClick: () => this.props.searchData() }}
                         />
                     </Menu.Item>
                 </Menu>

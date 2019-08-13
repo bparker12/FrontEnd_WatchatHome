@@ -68,15 +68,12 @@ export default class Review extends Component {
         if (this.state.review.find(review => review.watchId === this.props.watchlist.id)) {
             return (
                 <div>
-                    <Header size="medium" content={headerCont} />
+                    <Header size="medium" content={headerCont} style={{ margin: 2}} />
                     <Container>
                         {
                             this.state.review.filter(review => review.watchId === this.props.watchlist.id).map(review =>
                             <div>
-
-                                <Button style={{ padding: "2px", margin: "0px" }} icon size="tiny" onClick={() => this.deleteReview("reviews", review.id)}>
-                                    <Icon name="window close" size="small" />
-                                </Button>
+                                <Icon name="window close" style={{ padding: "2px", margin: "0px" }} icon size="small" onClick={() => this.deleteReview("reviews", review.id)} />
                                 <div>
                                     <ReviewCard watchlist={this.props.watchlist}
                                         review={review}
