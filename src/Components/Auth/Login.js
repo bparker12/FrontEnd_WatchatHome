@@ -18,7 +18,7 @@ export default class Login extends Component {
             .then((user) => {
                 this.props.setAuthState()
                 //   this.props.onLogin(user);
-                //   this.props.history.push('/');
+                  this.props.history.push('/');
             });
     }
     //this function toggles whether the login/register components are hidden or not.  toggled by the click on the a/ tag

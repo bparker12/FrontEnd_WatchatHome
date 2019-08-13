@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Card } from 'semantic-ui-react';
 import APIManager from '../../Modules/APIManager';
 import WatchCard from './WatchCard';
-import SplashPage from '../SplashPage'
+import SplashPage from './Review/SplashPage/SplashPage'
 export default class WatchComp extends Component {
 
     render() {

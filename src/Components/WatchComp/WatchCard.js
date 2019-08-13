@@ -55,73 +55,73 @@ export default class WatchCard extends Component {
     }
 
     render() {
-        // const { active } = this.state
-        // const content = (
-        //     <div>
-        //         <Header as='h2' inverted>
-        //             Addtional Details
-        //       </Header>
-        //         <Modal trigger={<Button>View</Button>}>
-        //             <Modal.Header>{this.props.watchlist.Title}</Modal.Header>
-        //             <Modal.Content image scrolling>
-        //                 <Image size='medium' src={this.props.watchlist.Poster} wrapped />
-        //                 <WatchDetails watchlist={this.props.watchlist} />
-        //             </Modal.Content>
-        //         </Modal>
-        //     </div>
-        // )
-        // // console.log("watchlist props", this.props.watchlist)
-        // let checkLabel = this.checkboxLabel()
-
-        return (
-            <WatchNoReview
-                watchlist={this.props.watchlist}
-                disabled={this.state.disabled}
-                open={this.open}
-                close={this.close}
-                updateCard={this.props.updateCard}
-                handleHide={this.handleHide}
-                handleShow={this.handleShow}
-                checkboxLabel={this.checkboxLabel}
-                watchedToggle={this.watchedToggle}
-                />
-
+        const { active } = this.state
+        const content = (
+            <div>
+                <Header as='h2' inverted>
+                    Addtional Details
+              </Header>
+                <Modal trigger={<Button>View</Button>}>
+                    <Modal.Header>{this.props.watchlist.Title}</Modal.Header>
+                    <Modal.Content image scrolling>
+                        <Image size='medium' src={this.props.watchlist.Poster} wrapped />
+                        <WatchDetails watchlist={this.props.watchlist} />
+                    </Modal.Content>
+                </Modal>
+            </div>
         )
+        // console.log("watchlist props", this.props.watchlist)
+        let checkLabel = this.checkboxLabel()
+
         // return (
-        //     <Card key={this.props.watchlist.id} raised style={{ 'width': 300, 'padding': 3, 'margin': 2, }} >
-        //         <Card.Content textAlign="left" style={{ 'padding': 5 }}>
-        //             <Dropdown icon="list ul" disabled={this.state.disabled}>
-        //                 <Dropdown.Menu isdisabled={this.state.disabled} >
-        //                     <Dropdown.Item onClick={this.open}> Remove
-        //                         <Confirm size="mini" open={this.state.open}
-        //                             onCancel={this.close}
-        //                             onConfirm={() => this.props.deleteCard("watchlists", this.props.watchlist.id)}
-        //                         />
-        //                     </Dropdown.Item>
-        //                     <Dropdown.Item>
-        //                         <Review watchlist={this.props.watchlist} />
-        //                     </Dropdown.Item>
-        //                 </Dropdown.Menu>
-        //             </Dropdown>
-        //             <Favorites watchlist={this.props.watchlist} updateCard={this.props.updateCard} />
-        //         </Card.Content>
-        //         <Dimmer.Dimmable
-        //             as={Image}
-        //             style={{ 'width': 295, }}
-        //             src={this.props.watchlist.Poster}
-        //             wrapped ui={false}
-        //             dimmed={active}
-        //             dimmer={{ active, content }}
-        //             onMouseEnter={this.handleShow}
-        //             onMouseLeave={this.handleHide}
+        //     <WatchNoReview
+        //         watchlist={this.props.watchlist}
+        //         disabled={this.state.disabled}
+        //         open={this.open}
+        //         close={this.close}
+        //         updateCard={this.props.updateCard}
+        //         handleHide={this.handleHide}
+        //         handleShow={this.handleShow}
+        //         checkboxLabel={this.checkboxLabel}
+        //         watchedToggle={this.watchedToggle}
         //         />
-        //         <Card.Content>
-        //             <Checkbox label={checkLabel} defaultChecked={this.props.watchlist.watched} onChange={this.watchedToggle} />
-        //             <Card.Header>{this.props.watchlist.Title}</Card.Header>
-        //             <Card.Meta>Runtime: {this.props.watchlist.Runtime}</Card.Meta>
-        //             <Card.Meta>Year: {this.props.watchlist.Year}</Card.Meta>
-        //         </Card.Content>
-        //     </Card>
+
         // )
+        return (
+            <Card key={this.props.watchlist.id} raised style={{ 'width': 300, 'padding': 3, 'margin': 2, }} >
+                <Card.Content textAlign="left" style={{ 'padding': 5 }}>
+                    <Dropdown icon="list ul" disabled={this.state.disabled}>
+                        <Dropdown.Menu isdisabled={this.state.disabled} >
+                            <Dropdown.Item onClick={this.open}> Remove
+                                <Confirm size="mini" open={this.state.open}
+                                    onCancel={this.close}
+                                    onConfirm={() => this.props.deleteCard("watchlists", this.props.watchlist.id)}
+                                />
+                            </Dropdown.Item>
+                            <Dropdown.Item>
+                                <Review watchlist={this.props.watchlist} />
+                            </Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                    <Favorites watchlist={this.props.watchlist} updateCard={this.props.updateCard} />
+                </Card.Content>
+                <Dimmer.Dimmable
+                    as={Image}
+                    style={{ 'width': 295, }}
+                    src={this.props.watchlist.Poster}
+                    wrapped ui={false}
+                    dimmed={active}
+                    dimmer={{ active, content }}
+                    onMouseEnter={this.handleShow}
+                    onMouseLeave={this.handleHide}
+                />
+                <Card.Content>
+                    <Checkbox label={checkLabel} defaultChecked={this.props.watchlist.watched} onChange={this.watchedToggle} />
+                    <Card.Header>{this.props.watchlist.Title}</Card.Header>
+                    <Card.Meta>Runtime: {this.props.watchlist.Runtime}</Card.Meta>
+                    <Card.Meta>Year: {this.props.watchlist.Year}</Card.Meta>
+                </Card.Content>
+            </Card>
+        )
     }
 }

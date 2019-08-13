@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, withRouter } from "react-router-dom";
 import Login from './Auth/Login';
 import WatchComp from '../Components/WatchComp/WatchComp'
-import SplashPage from './SplashPage';
+import SplashPage from './WatchComp/Review/SplashPage/SplashPage';
 
 
 class ApplicationViews extends Component {
