@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Card, Image, Button, Confirm, Checkbox, Dimmer, Header, Modal, Container, Dropdown } from 'semantic-ui-react';
+import { Card, Image, Button, Confirm, Checkbox, Dimmer, Header, Modal, Dropdown } from 'semantic-ui-react';
 import Favorites from './Favorites/Favorites';
 import Review from './Review/Review'
 import './WatchCard.css'
 import WatchDetails from './WatchDetails';
-import WatchNoReview from './WatchNoReview';
+// import WatchNoReview from './WatchNoReview';
 
 export default class WatchCard extends Component {
 

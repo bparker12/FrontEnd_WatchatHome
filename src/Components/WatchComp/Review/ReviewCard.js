@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import APIManager from '../../../Modules/APIManager';
-import { Message, Reveal, Button } from 'semantic-ui-react';
 import ReviewEdit from './ReviewEdit';
 
 export default class ReviewCard extends Component {

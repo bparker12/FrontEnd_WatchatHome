@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Menu } from 'semantic-ui-react';
-import APIManager from '../../Modules/APIManager';
+// import APIManager from '../../Modules/APIManager';
 import WatchCard from './WatchCard';
-import SplashPage from './Review/SplashPage/SplashPage'
 export default class WatchComp extends Component {
 
     state = {
