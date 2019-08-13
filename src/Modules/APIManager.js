@@ -1,4 +1,3 @@
-import React from 'react';
 import { app_key } from '../keys'
 
 

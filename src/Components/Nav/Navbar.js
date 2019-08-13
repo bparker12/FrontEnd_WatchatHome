@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Menu, Icon, Input, Dropdown } from "semantic-ui-react";
-import SearchResults from '../SearchResults/SearchResults'
+import { Menu, Input, Dropdown } from "semantic-ui-react";
 import { Link, withRouter } from "react-router-dom";
 // import './NavBar.css'
 
@@ -21,7 +20,7 @@ class Navbar extends Component {
         // let username = JSON.parse(sessionStorage.getItem("user")).username
         return (
             <nav className="navBar">
-                <Menu fixed pointing secondary className="Menu" >
+                <Menu fixed="top" pointing secondary className="Menu" >
                     <Menu.Item header as="h3" position="left">
                         <Dropdown icon="film" labeled floating >
                             <Dropdown.Menu >
