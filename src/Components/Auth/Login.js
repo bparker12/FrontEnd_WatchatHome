@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, Grid, Header, Image, Message, Segment, Container } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Message, Segment, } from 'semantic-ui-react'
 import { loginFunc } from './AuthManager';
 import RegistrationForm from './Register';
 import "./login.css"

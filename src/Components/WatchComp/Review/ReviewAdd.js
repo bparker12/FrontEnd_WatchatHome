@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Button, Input, Message } from 'semantic-ui-react';
-import APIManager from '../../../Modules/APIManager'
-import { objectMethod } from '@babel/types';
+import { Button, Input, } from 'semantic-ui-react';
+// import APIManager from '../../../Modules/APIManager'
+// import { objectMethod } from '@babel/types';
 
 export default class ReviewAdd extends Component {
 

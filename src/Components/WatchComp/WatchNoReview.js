@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Image, Button, Confirm, Checkbox, Dimmer, Header, Modal, Container, Dropdown } from 'semantic-ui-react';
+import { Card, Image, Button, Confirm, Checkbox, Dimmer, Header, Modal, Dropdown } from 'semantic-ui-react';
 import Favorites from './Favorites/Favorites';
 import Review from './Review/Review'
 import WatchDetails from './WatchDetails';

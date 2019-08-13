@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Form, Grid, Header, Image, Message, Segment, Container } from 'semantic-ui-react'
-import { registerFunc, setSessionStorage } from './AuthManager'
+import { Button, Form, Header, Message, Segment, } from 'semantic-ui-react'
+import { registerFunc } from './AuthManager'
 
 
 

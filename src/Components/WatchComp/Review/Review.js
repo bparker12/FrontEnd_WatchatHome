@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Button, Message, Header, Container, Reveal, Icon } from 'semantic-ui-react'
+import { Form, Button, Header, Container, Icon } from 'semantic-ui-react'
 import ReviewAdd from './ReviewAdd'
 import APIManager from '../../../Modules/APIManager'
 import ReviewCard from './ReviewCard'

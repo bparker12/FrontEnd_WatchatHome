@@ -4,7 +4,7 @@ import 'semantic-ui-css/semantic.min.css'
 import Navbar from './Components/Nav/Navbar'
 import ApplicationViews from './Components/ApplicationViews'
 import APIManager from './Modules/APIManager'
-import { Card, Modal, Button, Icon, Header, Image } from 'semantic-ui-react';
+import { Modal,} from 'semantic-ui-react';
 import SearchResults from './Components/SearchResults/SearchResults';
 
 class App extends Component {

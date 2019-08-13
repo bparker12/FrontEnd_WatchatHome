@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Header, Image, Menu, Segment, Container } from 'semantic-ui-react';
+import { Header, Segment, } from 'semantic-ui-react';
 import './SplashPage.css'
 
 export default class SplashPage extends Component {

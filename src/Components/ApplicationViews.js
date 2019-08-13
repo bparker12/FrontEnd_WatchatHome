@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Route, withRouter } from "react-router-dom";
-import Login from './Auth/Login';
 import WatchComp from '../Components/WatchComp/WatchComp'
-import SplashPage from './WatchComp/Review/SplashPage/SplashPage';
-import { getUserFromSessionStorage } from './Auth/AuthManager'
+import SplashPage from './SplashPage/SplashPage';
+// import { getUserFromSessionStorage } from './Auth/AuthManager'
+// import Login from './Auth/Login';
 
 
 class ApplicationViews extends Component {
