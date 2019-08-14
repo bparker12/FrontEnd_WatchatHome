@@ -3,15 +3,14 @@ import { app_key } from '../keys'
 
 const remoteURL = "http://localhost:8088"
 
-// const APIurl = "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=bojack&country=uk"
-// const options = new request(`${APIurl}`, {
-//   method: 'GET',
-//   headers: {
-//     'cache-control': 'no-cache',
-//     "X-RapidAPI-Host": `${app_key[1].app_header}`,
-//       "X-RapidAPI-Key": `${app_key[1].app_key}`
-//   },
-// })
+// const url ="https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=inception&country=us"
+const options = {
+  method: 'GET',
+  headers: {
+    "X-RapidAPI-Host": `${app_key[1].app_header}`,
+    "X-RapidAPI-Key": `${app_key[1].app_key}`
+  },
+}
 
 
 export default {
@@ -31,22 +30,11 @@ export default {
     return fetch(`http://www.omdbapi.com/?t=${search}&apikey=${app_key[0].app_key}&r=json&plot=short`)
       .then(data => data.json())
   },
-  utellyData() {
+  utellyData(search) {
     return (
-      // fetch(`${options}`)
-    //     .then(data => data.json())
-    //     .then(data => console.log(data))
-    //     .catch(e => console.error(e))
-    // )
-    // let unirest = require('unirest');
-    // unirest.get("https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=bojack&country=uk")
-    //   .header("X-RapidAPI-Host", "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com")
-    //   .header("X-RapidAPI-Key", "0bf6b5bb97msh382482ce5f67d63p17bed5jsn7307a57cc1ac")
-    //   .end(function (search) {
-    //     console.log(search.status, search.headers, search.body);
-    // }
-    ""
-    );
+      fetch(`https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=${search}&country=us`, options)
+        .then(data => data.json())
+    )
   },
 
   delete(database, id) {

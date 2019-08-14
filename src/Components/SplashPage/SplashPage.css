@@ -13,7 +13,7 @@ bottom: 0;
     background: url("https://farm5.staticflickr.com/4910/31749890377_e1f76ae397_b.jpg") repeat-x;
     height: 560px;
     width: 5076px;
-    animation: slide 75s linear infinite;
+    animation: slide 60s linear infinite;
   }
 
   @keyframes slide{

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu, Input, Dropdown } from "semantic-ui-react";
+import { Menu, Input, Dropdown, Icon } from "semantic-ui-react";
 import { Link, withRouter } from "react-router-dom";
 // import './NavBar.css'
 
@@ -20,9 +20,9 @@ class Navbar extends Component {
         // let username = JSON.parse(sessionStorage.getItem("user")).username
         return (
             <nav className="navBar">
-                <Menu fixed="top" pointing secondary className="Menu" >
+                <Menu  pointing secondary className="Menu" >
                     <Menu.Item header as="h3" position="left">
-                        <Dropdown icon="film" labeled floating >
+                        <Dropdown text='Menu' labeled floating className="film">
                             <Dropdown.Menu >
                                 <Dropdown.Item as={Link} content="Home" to="/">
                                 </Dropdown.Item>
@@ -31,6 +31,10 @@ class Navbar extends Component {
                                 <Dropdown.Item text="Logout" onClick={this.handleLogOut} />
                             </Dropdown.Menu>
                         </Dropdown>
+                    </Menu.Item>
+                    <Menu.Item as='h1' position="left" style={{padding: 20.57}}>
+                    <strong>Watch at Home</strong>
+                    <Icon name="film" size="small"  />
                     </Menu.Item>
                     <Menu.Item>
                         <Input

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Card, Image, Button, Confirm, Checkbox, Dimmer, Header, Modal, Dropdown } from 'semantic-ui-react';
+import { Card, Image, Button, Confirm, Checkbox, Dimmer, Header, Modal, Dropdown, Grid } from 'semantic-ui-react';
 import Favorites from './Favorites/Favorites';
 import Review from './Review/Review'
 import './WatchCard.css'
 import WatchDetails from './WatchDetails';
+
 // import WatchNoReview from './WatchNoReview';
 
 export default class WatchCard extends Component {
@@ -72,7 +73,6 @@ export default class WatchCard extends Component {
         )
         // console.log("watchlist props", this.props.watchlist)
         let checkLabel = this.checkboxLabel()
-
         // return (
         //     <WatchNoReview
         //         watchlist={this.props.watchlist}
@@ -91,7 +91,7 @@ export default class WatchCard extends Component {
             <Card key={this.props.watchlist.id} raised style={{ 'width': 250, 'padding': 3, 'margin': 2, }} >
                 <Card.Content textAlign="left" style={{ 'padding': 5 }}>
                     <Dropdown icon="list ul" disabled={this.state.disabled}>
-                        <Dropdown.Menu isdisabled={this.state.disabled} >
+                        <Dropdown.Menu disabled={this.state.disabled} >
                             <Dropdown.Item onClick={this.open}> Remove
                                 <Confirm size="mini" open={this.state.open}
                                     onCancel={this.close}
@@ -104,7 +104,7 @@ export default class WatchCard extends Component {
                 </Card.Content>
                 <Dimmer.Dimmable
                     as={Image}
-                    style={{ 'width': 245, height: 360}}
+                    style={{ 'width': 245, height: 360 }}
                     src={this.props.watchlist.Poster}
                     wrapped ui={false}
                     dimmed={active}
@@ -112,13 +112,24 @@ export default class WatchCard extends Component {
                     onMouseEnter={this.handleShow}
                     onMouseLeave={this.handleHide}
                 />
-                <Card.Content style={{ padding: 8}}>
+                <Card.Content style={{ padding: 8 }}>
+                    <Card.Header textAlign="center">{this.props.watchlist.Title}</Card.Header>
                     <Checkbox label={checkLabel} defaultChecked={this.props.watchlist.watched} onChange={this.watchedToggle} />
-                    <Card.Header>{this.props.watchlist.Title}</Card.Header>
-                    <Card.Meta>Runtime: {this.props.watchlist.Runtime}</Card.Meta>
-                    <Card.Meta>Year: {this.props.watchlist.Year}</Card.Meta>
+                    <Grid columns={2}>
+                    <Grid.Row>
+                    <Grid.Column style={{padding: 8}}>
+                        <Card.Description>
+                            <Card.Meta>Runtime: {this.props.watchlist.Runtime}</Card.Meta>
+                            <Card.Meta>Year: {this.props.watchlist.Year}</Card.Meta>
+                        </Card.Description>
+                    </Grid.Column>
+                    <Grid.Column>
+                        <Image style={{ margin: 0 }} floated='right' size='small' src={this.props.watchlist.Utelly[0].locations[0].icon} href={this.props.watchlist.Utelly[0].locations[0].url} target="_blank" />
+                    </Grid.Column>
+                    </Grid.Row>
+                    </Grid>
                 </Card.Content>
-                <Card.Content style={{ padding: 5}}>
+                <Card.Content style={{ padding: 5 }}>
                     <Review watchlist={this.props.watchlist} />
                 </Card.Content>
             </Card>

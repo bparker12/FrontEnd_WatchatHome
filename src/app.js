@@ -15,6 +15,7 @@ class App extends Component {
         searchInput: '',
         APIinfo: [],
         watchlists: [],
+        Utelly: [],
         openModal: false,
         value: ''
     }
@@ -66,10 +67,11 @@ class App extends Component {
             APIManager.omdbData(this.state.searchInput)
                 .then((info) => {
                     this.setState({ APIinfo: info })
-                    // console.log(this.state.APIinfo)
                 })
-                this.setState({value:""})
-            this.toggle()
+                .then(() => APIManager.utellyData(this.state.APIinfo.Title)
+                ).then((data) => {
+                    (this.setState({Utelly: data}))
+                }).then(() => this.toggle())
             // console.log(this.state.openModal)
         }
     }
@@ -92,8 +94,8 @@ class App extends Component {
     }
     //this function takes certain keys/value from the API data and puts them in an object to be put into the database. then a function is called to post to the database
     saveCard = (evt) => {
-        let evtId = evt.target.id
-        console.log("save click works", evt.target.id)
+        // let evtId = evt.target.id
+        // console.log("save click works", evt.target.id)
 
         const card = {
             userId: JSON.parse(sessionStorage.getItem('user')).id,
@@ -113,6 +115,7 @@ class App extends Component {
             Writer: this.state.APIinfo.Writer,
             imdbID: this.state.APIinfo.imdbID,
             imdbRating: this.state.APIinfo.imdbRating,
+            Utelly: this.state.Utelly.results,
             favorite: false,
             watched: false,
         }
@@ -125,7 +128,7 @@ class App extends Component {
 
     //this renders the dom based on whether a user is logged in or not and session storage has a value for "user"
     render() {
-        // console.log('watchlists - app', this.state.watchlists)
+        // console.log('watchlists - app', this.state.Utelly)
         if (this.state.authenticated) {
             return (
                 <React.Fragment>
@@ -136,8 +139,8 @@ class App extends Component {
                     openModal={this.state.openModal}
                     toggle={this.toggle}
                     />
-                    <Modal onclose open={this.state.openModal} size="small" centered={false } >
-                        <SearchResults toggle={this.toggle} APIinfo={this.state.APIinfo} saveCard={this.saveCard} />
+                    <Modal open={this.state.openModal} size="small" centered={false } >
+                        <SearchResults toggle={this.toggle} APIinfo={this.state.APIinfo} saveCard={this.saveCard} Utelly={this.state.Utelly} />
                     </Modal>
                     {/* <searchResults APIinfo={this.state.APIinfo} show={this.state.openModal} onClose={this.toggle} /> */}
                     <ApplicationViews
@@ -147,6 +150,7 @@ class App extends Component {
                     deleteCard={this.deleteCard}
                     updateCard={this.updateCard}
                     value={this.state.value}
+                    Utelly={this.state.Utelly}
                     />
                 </React.Fragment>
             )
