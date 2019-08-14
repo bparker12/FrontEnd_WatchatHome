@@ -8,16 +8,15 @@ export default class SplashPage extends Component {
     render() {
 
         return (
-            <div className="main">
-                <Header as="h1" textAlign="center">Welcome to Watch at Home (WAH)</Header>
-                <Segment raised textAlign="center"  color='grey' size='large'>
-                   <Segment.Inline style={{'font-size': 25}}>
-                   To start your watchlist, please use the search bar on the navbar to look for shows or movies you are interested in seeing!!!
-                   </Segment.Inline >
-                </Segment>
+            <div className="main" style={{backgroundColor:"black"}}>
                 <div className="sliding">
 
                 </div>
+                <Segment raised textAlign="center" size='large'>
+                   <Segment.Inline style={{'fontSize': 25}}>
+                   To start your watchlist, please use the search bar on the navbar to look for shows or movies you are interested in seeing! Already have a watchlist started, head over to your profile.
+                   </Segment.Inline>
+                </Segment>
                 {/* <footer className="footer" >
                     <Menu pagination inverted fluid className="footer" >
                         <Menu.Item>

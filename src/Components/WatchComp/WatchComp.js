@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card, Menu } from 'semantic-ui-react';
 // import APIManager from '../../Modules/APIManager';
 import WatchCard from './WatchCard';
+import './WatchComp.css'
 export default class WatchComp extends Component {
 
     state = {
@@ -9,6 +10,7 @@ export default class WatchComp extends Component {
         List: false,
         Watched: false,
         Favorites: false,
+        activeItem: "All"
     }
 
     render() {
@@ -19,17 +21,17 @@ export default class WatchComp extends Component {
             return (
                 <React.Fragment>
                     <div>
-                    <Menu pointing size="huge">
+                        <Menu color="black" size="huge" className="watchMenu" tabular>
                             <Menu.Item as="a" name="All" active={activeItem === "All"}
-                                onClick={() => this.setState({ All: true, List: false, Watched: false, Favorites: false })} />
+                                onClick={() => this.setState({ All: true, List: false, Watched: false, Favorites: false, activeItem: "All" })} />
                             <Menu.Item as="a" name="Watchlist" active={activeItem === "Watchlist"}
-                                onClick={() =>this.setState({ All: false, List: true, Watched: false, Favorites: false })} />
+                                onClick={() => this.setState({ All: false, List: true, Watched: false, Favorites: false, activeItem: "Watchlist" })} />
                             <Menu.Item as="a" name="Favorites" active={activeItem === "Favorites"}
-                                onClick={() =>this.setState({ All: false, List: false, Watched: false, Favorites: true })} />
+                                onClick={() => this.setState({ All: false, List: false, Watched: false, Favorites: true, activeItem: "Favorites" })} />
                             <Menu.Item as="a" name="Watched" active={activeItem === "Watched"}
-                                onClick={() =>this.setState({ All: false, List: false, Watched: true , Favorites: false })} />
+                                onClick={() => this.setState({ All: false, List: false, Watched: true, Favorites: false, activeItem: "Watched" })} />
                         </Menu>
-                        <Card.Group wrapped itemsPerRow={2} style={{ 'margin': 1 }} >
+                        <Card.Group itemsPerRow={2} style={{ 'margin': 1 }} >
                             {this.props.watchlists.filter(watchlist => watchlist.userId === currentUser.id).map(watchlist => (
                                 <div key={watchlist.id}>
                                     <WatchCard
@@ -48,15 +50,15 @@ export default class WatchComp extends Component {
             return (
                 <React.Fragment>
                     <div>
-                    <Menu pointing size="huge">
+                        <Menu color="black" size="huge" className="watchMenu" tabular>
                             <Menu.Item as="a" name="All" active={activeItem === "All"}
-                                onClick={() => this.setState({ All: true, List: false, Watched: false, Favorites: false })} />
+                                onClick={() => this.setState({ All: true, List: false, Watched: false, Favorites: false, activeItem: "All" })} />
                             <Menu.Item as="a" name="Watchlist" active={activeItem === "Watchlist"}
-                                onClick={() =>this.setState({ All: false, List: true, Watched: false, Favorites: false })} />
+                                onClick={() => this.setState({ All: false, List: true, Watched: false, Favorites: false, activeItem: "Watchlist" })} />
                             <Menu.Item as="a" name="Favorites" active={activeItem === "Favorites"}
-                                onClick={() =>this.setState({ All: false, List: false, Watched: false, Favorites: true })} />
+                                onClick={() => this.setState({ All: false, List: false, Watched: false, Favorites: true, activeItem: "Favorites" })} />
                             <Menu.Item as="a" name="Watched" active={activeItem === "Watched"}
-                                onClick={() =>this.setState({ All: false, List: false, Watched: true , Favorites: false })} />
+                                onClick={() => this.setState({ All: false, List: false, Watched: true, Favorites: false, activeItem: "Watched" })} />
                         </Menu>
                         <Card.Group wrapped itemsPerRow={2} style={{ 'margin': 1 }} >
                             {this.props.watchlists.filter(watchlist => watchlist.userId === currentUser.id && watchlist.favorite === false && watchlist.watched === false).map(watchlist => (
@@ -77,15 +79,15 @@ export default class WatchComp extends Component {
             return (
                 <React.Fragment>
                     <div>
-                    <Menu pointing size="huge">
+                    <Menu color="black" size="huge" className="watchMenu" tabular>
                             <Menu.Item as="a" name="All" active={activeItem === "All"}
-                                onClick={() => this.setState({ All: true, List: false, Watched: false, Favorites: false })} />
+                                onClick={() => this.setState({ All: true, List: false, Watched: false, Favorites: false, activeItem: "All" })} />
                             <Menu.Item as="a" name="Watchlist" active={activeItem === "Watchlist"}
-                                onClick={() =>this.setState({ All: false, List: true, Watched: false, Favorites: false })} />
+                                onClick={() =>this.setState({ All: false, List: true, Watched: false, Favorites: false, activeItem: "Watchlist" })} />
                             <Menu.Item as="a" name="Favorites" active={activeItem === "Favorites"}
-                                onClick={() =>this.setState({ All: false, List: false, Watched: false, Favorites: true })} />
+                                onClick={() =>this.setState({ All: false, List: false, Watched: false, Favorites: true, activeItem: "Favorites"  })} />
                             <Menu.Item as="a" name="Watched" active={activeItem === "Watched"}
-                                onClick={() =>this.setState({ All: false, List: false, Watched: true , Favorites: false })} />
+                                onClick={() =>this.setState({ All: false, List: false, Watched: true , Favorites: false, activeItem: "Watched"  })} />
                         </Menu>
                         <Card.Group wrapped itemsPerRow={2} style={{ 'margin': 1 }} >
                             {this.props.watchlists.filter(watchlist => watchlist.userId === currentUser.id && watchlist.watched === true).map(watchlist => (
@@ -106,15 +108,15 @@ export default class WatchComp extends Component {
             return (
                 <React.Fragment>
                     <div>
-                    <Menu pointing size="huge">
+                    <Menu color="black" size="huge" className="watchMenu" tabular>
                             <Menu.Item as="a" name="All" active={activeItem === "All"}
-                                onClick={() => this.setState({ All: true, List: false, Watched: false, Favorites: false })} />
+                                onClick={() => this.setState({ All: true, List: false, Watched: false, Favorites: false, activeItem: "All" })} />
                             <Menu.Item as="a" name="Watchlist" active={activeItem === "Watchlist"}
-                                onClick={() =>this.setState({ All: false, List: true, Watched: false, Favorites: false })} />
+                                onClick={() =>this.setState({ All: false, List: true, Watched: false, Favorites: false, activeItem: "Watchlist" })} />
                             <Menu.Item as="a" name="Favorites" active={activeItem === "Favorites"}
-                                onClick={() =>this.setState({ All: false, List: false, Watched: false, Favorites: true })} />
+                                onClick={() =>this.setState({ All: false, List: false, Watched: false, Favorites: true, activeItem: "Favorites"  })} />
                             <Menu.Item as="a" name="Watched" active={activeItem === "Watched"}
-                                onClick={() =>this.setState({ All: false, List: false, Watched: true , Favorites: false })} />
+                                onClick={() =>this.setState({ All: false, List: false, Watched: true , Favorites: false, activeItem: "Watched"  })} />
                         </Menu>
                         <Card.Group wrapped itemsPerRow={2} style={{ 'margin': 1 }} >
                             {this.props.watchlists.filter(watchlist => watchlist.userId === currentUser.id && watchlist.favorite === true).map(watchlist => (

@@ -37,7 +37,7 @@ export default class WatchNoReview extends Component {
             <Card key={this.props.watchlist.id} raised style={{ 'width': 300, 'padding': 3, 'margin': 2, }} >
                 <Card.Content textAlign="left" style={{ 'padding': 5 }}>
                     <Dropdown icon="list ul" disabled={this.props.disabled}>
-                        <Dropdown.Menu isdisabled={this.props.disabled} >
+                        <Dropdown.Menu disabled={this.props.disabled} >
                             <Dropdown.Item onClick={this.props.open}> Remove
                                 <Confirm size="mini" open={this.props.open}
                                     onCancel={this.close}
