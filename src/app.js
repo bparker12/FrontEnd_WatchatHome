@@ -71,10 +71,7 @@ class App extends Component {
                 .then(() => APIManager.utellyData(this.state.APIinfo.Title)
                 ).then((data) => {
                     (this.setState({Utelly: data}))
-                }).then(() =>
-                console.log("utelly", this.state.Utelly.results)
-                )
-            this.toggle()
+                }).then(() => this.toggle())
             // console.log(this.state.openModal)
         }
     }
@@ -97,7 +94,7 @@ class App extends Component {
     }
     //this function takes certain keys/value from the API data and puts them in an object to be put into the database. then a function is called to post to the database
     saveCard = (evt) => {
-        let evtId = evt.target.id
+        // let evtId = evt.target.id
         // console.log("save click works", evt.target.id)
 
         const card = {
@@ -142,7 +139,7 @@ class App extends Component {
                     openModal={this.state.openModal}
                     toggle={this.toggle}
                     />
-                    <Modal onclose open={this.state.openModal} size="small" centered={false } >
+                    <Modal open={this.state.openModal} size="small" centered={false } >
                         <SearchResults toggle={this.toggle} APIinfo={this.state.APIinfo} saveCard={this.saveCard} Utelly={this.state.Utelly} />
                     </Modal>
                     {/* <searchResults APIinfo={this.state.APIinfo} show={this.state.openModal} onClose={this.toggle} /> */}

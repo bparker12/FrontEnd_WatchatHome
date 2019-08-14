@@ -3,7 +3,7 @@ import { app_key } from '../keys'
 
 const remoteURL = "http://localhost:8088"
 
-const url ="https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=inception&country=us"
+// const url ="https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=inception&country=us"
 const options = {
   method: 'GET',
   headers: {

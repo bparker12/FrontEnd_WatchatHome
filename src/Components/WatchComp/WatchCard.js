@@ -4,7 +4,6 @@ import Favorites from './Favorites/Favorites';
 import Review from './Review/Review'
 import './WatchCard.css'
 import WatchDetails from './WatchDetails';
-import { Link } from "react-router-dom";
 
 // import WatchNoReview from './WatchNoReview';
 

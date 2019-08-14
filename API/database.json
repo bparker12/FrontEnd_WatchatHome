@@ -132,6 +132,43 @@
       "favorite": false,
       "watched": false,
       "id": 17
+    },
+    {
+      "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
+      "Title": "Bob's Burgers",
+      "Year": "2011–",
+      "Rated": "TV-PG",
+      "Runtime": "22 min",
+      "Actors": "H. Jon Benjamin, Dan Mintz, Eugene Mirman, John Roberts",
+      "Awards": "Won 2 Primetime Emmys. Another 7 wins & 42 nominations.",
+      "Director": "N/A",
+      "Genre": "Animation, Comedy",
+      "Plot": "Bob Belcher, along with his wife and 3 children, try to run their last hope of holding the family together, which is running Bob's dream restaurant.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BZGJiNmM1NDctNWUxYS00YzE4LWJjNTgtYTJhYzE0NjFmMTMwXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+      "Type": "series",
+      "Writer": "Loren Bouchard, Jim Dauterive",
+      "imdbID": "tt1561755",
+      "imdbRating": "8.1",
+      "Utelly": [
+        {
+          "picture": "https://utellyassets2-9.imgix.net/2/Open/FOX_7/Program/16500468/_4by3/BobsBurgers_S9_KA1.jpg?fit=crop&auto=compress&crop=faces,top",
+          "name": "Bob's Burgers",
+          "locations": [
+            {
+              "display_name": "Amazon Prime",
+              "name": "AmazonUS",
+              "url": "http://www.amazon.com/gp/product/B076NVVWDM?tag=utellycom00-21",
+              "id": "58c141a37588d57a9722dd54",
+              "icon": "https://utellyassets7.imgix.net/locations_icons/utelly/black_new/AmazonUS.png?auto=compress&app_version=62849c3a-c61e-463d-ace3-596d28bedd4e_2019-08-14&w=92"
+            }
+          ],
+          "weight": 7,
+          "id": "57633b6bebb7f956559d6cd9"
+        }
+      ],
+      "favorite": false,
+      "watched": false,
+      "id": 18
     }
   ],
   "reviews": []
