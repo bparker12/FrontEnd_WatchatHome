@@ -5,6 +5,20 @@ import { Link } from "react-router-dom";
 
 export default class SearchResults extends Component {
 
+ apiResultsIcon = () => {
+     if(this.props.Utelly.results.length === 0) {
+         return "https://upload.wikimedia.org/wikipedia/commons/6/64/Poster_not_available.jpg"
+     } else {
+         return this.props.Utelly.results[0].locations[0].icon
+     }
+ }
+//have the elements only render if there is a "length" on the result from is great than 0
+ apiResults = () => {
+    if(this.props.Utelly.results.length === 0) {
+        return ""
+    }
+ }
+
     render() {
     console.log("utelly results", this.props.Utelly.results)
 
