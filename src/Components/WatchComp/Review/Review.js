@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Button, Header, Container, Icon } from 'semantic-ui-react'
+import { Form, Button, Header, Container, Icon, Card } from 'semantic-ui-react'
 import ReviewAdd from './ReviewAdd'
 import APIManager from '../../../Modules/APIManager'
 import ReviewCard from './ReviewCard'
@@ -73,7 +73,9 @@ export default class Review extends Component {
                         {
                             this.state.review.filter(review => review.watchId === this.props.watchlist.id).map(review =>
                             <div key={review.id}>
+                            <Card.Meta textAlign="right">
                                 <Icon name="window close" style={{ padding: "2px", margin: "0px" }} icon size="small" onClick={() => this.deleteReview("reviews", review.id)} />
+                            </Card.Meta>
                                 <div>
                                     <ReviewCard watchlist={this.props.watchlist}
                                         review={review}

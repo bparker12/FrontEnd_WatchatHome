@@ -17,7 +17,6 @@ class App extends Component {
         watchlists: [],
         Utelly: [],
         openModal: false,
-        value: ''
     }
 
     toggle = () => {
@@ -81,7 +80,7 @@ class App extends Component {
             .then(() => APIManager.getAll("watchlists"))
             .then(watch =>
                 this.setState({
-                    watchlists: watch
+                    watchlists: watch,
                 }))
     }
 
