@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Card, Menu } from 'semantic-ui-react';
-// import APIManager from '../../Modules/APIManager';
 import WatchCard from './WatchCard';
 import './WatchComp.css'
 export default class WatchComp extends Component {
@@ -31,7 +30,7 @@ export default class WatchComp extends Component {
                             <Menu.Item as="a" name="Watched" active={activeItem === "Watched"}
                                 onClick={() => this.setState({ All: false, List: false, Watched: true, Favorites: false, activeItem: "Watched" })} />
                         </Menu>
-                        <Card.Group itemsPerRow={2} style={{ 'margin': 1 }} >
+                        <Card.Group  centered itemsPerRow={5} style={{ 'margin': 1 }} >
                             {this.props.watchlists.filter(watchlist => watchlist.userId === currentUser.id).map(watchlist => (
                                 <div key={watchlist.id}>
                                     <WatchCard
@@ -60,7 +59,7 @@ export default class WatchComp extends Component {
                             <Menu.Item as="a" name="Watched" active={activeItem === "Watched"}
                                 onClick={() => this.setState({ All: false, List: false, Watched: true, Favorites: false, activeItem: "Watched" })} />
                         </Menu>
-                        <Card.Group wrapped itemsPerRow={2} style={{ 'margin': 1 }} >
+                        <Card.Group centered itemsPerRow={5} itemsPerRow={2} style={{ 'margin': 1 }} >
                             {this.props.watchlists.filter(watchlist => watchlist.userId === currentUser.id && watchlist.favorite === false && watchlist.watched === false).map(watchlist => (
                                 <div key={watchlist.id}>
                                     <WatchCard
@@ -89,7 +88,7 @@ export default class WatchComp extends Component {
                             <Menu.Item as="a" name="Watched" active={activeItem === "Watched"}
                                 onClick={() =>this.setState({ All: false, List: false, Watched: true , Favorites: false, activeItem: "Watched"  })} />
                         </Menu>
-                        <Card.Group wrapped itemsPerRow={2} style={{ 'margin': 1 }} >
+                        <Card.Group centered itemsPerRow={5} itemsPerRow={2} style={{ 'margin': 1 }} >
                             {this.props.watchlists.filter(watchlist => watchlist.userId === currentUser.id && watchlist.watched === true).map(watchlist => (
                                 <div key={watchlist.id}>
                                     <WatchCard
@@ -118,7 +117,7 @@ export default class WatchComp extends Component {
                             <Menu.Item as="a" name="Watched" active={activeItem === "Watched"}
                                 onClick={() =>this.setState({ All: false, List: false, Watched: true , Favorites: false, activeItem: "Watched"  })} />
                         </Menu>
-                        <Card.Group wrapped itemsPerRow={2} style={{ 'margin': 1 }} >
+                        <Card.Group centered itemsPerRow={5} itemsPerRow={2} style={{ 'margin': 1 }} >
                             {this.props.watchlists.filter(watchlist => watchlist.userId === currentUser.id && watchlist.favorite === true).map(watchlist => (
                                 <div key={watchlist.id}>
                                     <WatchCard
