@@ -72,7 +72,7 @@ export default class Review extends Component {
                     <Container>
                         {
                             this.state.review.filter(review => review.watchId === this.props.watchlist.id).map(review =>
-                            <div>
+                            <div key={review.id}>
                                 <Icon name="window close" style={{ padding: "2px", margin: "0px" }} icon size="small" onClick={() => this.deleteReview("reviews", review.id)} />
                                 <div>
                                     <ReviewCard watchlist={this.props.watchlist}
@@ -91,7 +91,7 @@ export default class Review extends Component {
                     <Form>
                         <React.Fragment>
                             <div hidden={this.state.hidden}>
-                                <Button compact onClick={this.handleReviewClick}>Add a Review</Button>
+                                <Button className="buttonReview" compact onClick={this.handleReviewClick}>Add a Review</Button>
                             </div>
                             <div hidden={!this.state.hidden}>
                                 <ReviewAdd

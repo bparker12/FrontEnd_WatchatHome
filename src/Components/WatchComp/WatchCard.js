@@ -49,6 +49,7 @@ export default class WatchCard extends Component {
             Writer: this.props.watchlist.Writer,
             imdbID: this.props.watchlist.imdbID,
             imdbRating: this.props.watchlist.imdbRating,
+            Utelly: this.props.watchlist.Utelly,
             favorite: this.props.watchlist.favorite,
             watched: !this.props.watchlist.watched
         }
@@ -87,52 +88,103 @@ export default class WatchCard extends Component {
         //         />
 
         // )
-        return (
-            <Card key={this.props.watchlist.id} raised style={{ 'width': 250, 'padding': 3, 'margin': 2, }} >
-                <Card.Content textAlign="left" style={{ 'padding': 5 }}>
-                    <Dropdown icon="list ul" disabled={this.state.disabled}>
-                        <Dropdown.Menu disabled={this.state.disabled} >
-                            <Dropdown.Item onClick={this.open}> Remove
+
+        if (this.props.watchlist.Utelly.length === 0) {
+            return (
+                <Card key={this.props.watchlist.id} raised style={{ 'width': 250, 'padding': 3, 'margin': 2, }} >
+                    <Card.Content textAlign="left" style={{ 'padding': 5 }}>
+                        <Dropdown icon="list ul" disabled={this.state.disabled}>
+                            <Dropdown.Menu disabled={this.state.disabled} >
+                                <Dropdown.Item onClick={this.open}> Remove
                                 <Confirm size="mini" open={this.state.open}
-                                    onCancel={this.close}
-                                    onConfirm={() => this.props.deleteCard("watchlists", this.props.watchlist.id)}
-                                />
-                            </Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                    <Favorites watchlist={this.props.watchlist} updateCard={this.props.updateCard} />
-                </Card.Content>
-                <Dimmer.Dimmable
-                    as={Image}
-                    style={{ 'width': 245, height: 360 }}
-                    src={this.props.watchlist.Poster}
-                    wrapped ui={false}
-                    dimmed={active}
-                    dimmer={{ active, content }}
-                    onMouseEnter={this.handleShow}
-                    onMouseLeave={this.handleHide}
-                />
-                <Card.Content style={{ padding: 8 }}>
-                    <Card.Header textAlign="center">{this.props.watchlist.Title}</Card.Header>
-                    <Checkbox label={checkLabel} defaultChecked={this.props.watchlist.watched} onChange={this.watchedToggle} />
-                    <Grid columns={2}>
-                    <Grid.Row>
-                    <Grid.Column style={{padding: 8}}>
-                        <Card.Description>
-                            <Card.Meta>Runtime: {this.props.watchlist.Runtime}</Card.Meta>
-                            <Card.Meta>Year: {this.props.watchlist.Year}</Card.Meta>
-                        </Card.Description>
-                    </Grid.Column>
-                    <Grid.Column>
-                        <Image style={{ margin: 0 }} floated='right' size='small' src={this.props.watchlist.Utelly[0].locations[0].icon} href={this.props.watchlist.Utelly[0].locations[0].url} target="_blank" />
-                    </Grid.Column>
-                    </Grid.Row>
-                    </Grid>
-                </Card.Content>
-                <Card.Content style={{ padding: 5 }}>
-                    <Review watchlist={this.props.watchlist} />
-                </Card.Content>
-            </Card>
-        )
+                                        onCancel={this.close}
+                                        onConfirm={() => this.props.deleteCard("watchlists", this.props.watchlist.id)}
+                                    />
+                                </Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                        <Favorites watchlist={this.props.watchlist} updateCard={this.props.updateCard} />
+                    </Card.Content>
+                    <Dimmer.Dimmable
+                        as={Image}
+                        style={{ 'width': 245, height: 360 }}
+                        src={this.props.watchlist.Poster}
+                        wrapped ui={false}
+                        dimmed={active}
+                        dimmer={{ active, content }}
+                        onMouseEnter={this.handleShow}
+                        onMouseLeave={this.handleHide}
+                    />
+                    <Card.Content style={{ padding: 8 }}>
+                        <Card.Header textAlign="center">{this.props.watchlist.Title}</Card.Header>
+                        <Checkbox label={checkLabel} defaultChecked={this.props.watchlist.watched} onChange={this.watchedToggle} />
+                        <Grid columns={2}>
+                            <Grid.Row>
+                                <Grid.Column style={{ padding: 8 }}>
+                                    <Card.Description>
+                                        <Card.Meta>Runtime: {this.props.watchlist.Runtime}</Card.Meta>
+                                        <Card.Meta>Year: {this.props.watchlist.Year}</Card.Meta>
+                                    </Card.Description>
+                                </Grid.Column>
+                                <Grid.Column>
+                                </Grid.Column>
+                            </Grid.Row>
+                        </Grid>
+                    </Card.Content>
+                    <Card.Content style={{ padding: 5 }}>
+                        <Review watchlist={this.props.watchlist} />
+                    </Card.Content>
+                </Card>
+            )
+        } else {
+            return (
+                <Card key={this.props.watchlist.id} raised style={{ 'width': 250, 'padding': 3, 'margin': 2, }} >
+                    <Card.Content textAlign="left" style={{ 'padding': 5 }}>
+                        <Dropdown icon="list ul" disabled={this.state.disabled}>
+                            <Dropdown.Menu disabled={this.state.disabled} >
+                                <Dropdown.Item onClick={this.open}> Remove
+                                <Confirm size="mini" open={this.state.open}
+                                        onCancel={this.close}
+                                        onConfirm={() => this.props.deleteCard("watchlists", this.props.watchlist.id)}
+                                    />
+                                </Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                        <Favorites watchlist={this.props.watchlist} updateCard={this.props.updateCard} />
+                    </Card.Content>
+                    <Dimmer.Dimmable
+                        as={Image}
+                        style={{ 'width': 245, height: 360 }}
+                        src={this.props.watchlist.Poster}
+                        wrapped ui={false}
+                        dimmed={active}
+                        dimmer={{ active, content }}
+                        onMouseEnter={this.handleShow}
+                        onMouseLeave={this.handleHide}
+                    />
+                    <Card.Content style={{ padding: 8 }}>
+
+                        <Card.Header textAlign="center">{this.props.watchlist.Title}</Card.Header>
+                        <Checkbox label={checkLabel} defaultChecked={this.props.watchlist.watched} onChange={this.watchedToggle} />
+                        <Grid columns={2}>
+                            <Grid.Row>
+                                <Grid.Column style={{ padding: 8 }}>
+                                    <Card.Description>
+                                        <Card.Meta>Runtime: {this.props.watchlist.Runtime}</Card.Meta>
+                                        <Card.Meta>Year: {this.props.watchlist.Year}</Card.Meta>
+                                    </Card.Description>
+                                </Grid.Column>
+                                <Grid.Column>
+                                    <Image style={{ margin: 0 }} floated='right' size='small' src={this.props.watchlist.Utelly[0].locations[0].icon} href={this.props.watchlist.Utelly[0].locations[0].url} target="_blank" />
+                                </Grid.Column>
+                            </Grid.Row>
+                        </Grid>
+                    </Card.Content>
+                    <Card.Content style={{ padding: 5 }}>
+                        <Review watchlist={this.props.watchlist} />
+                    </Card.Content>
+                </Card>
+            )
+        }
     }
 }
