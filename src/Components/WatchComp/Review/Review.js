@@ -67,7 +67,7 @@ export default class Review extends Component {
         let headerCont = JSON.parse(sessionStorage.getItem('user')).username + "'s review:"
         if (this.state.review.find(review => review.watchId === this.props.watchlist.id)) {
             return (
-                <div>
+                <div style={{background: "#E0E1E2", borderRadius: "4px"}}>
                     <Header size="medium" content={headerCont} style={{ margin: 2}} />
                     <Container>
                         {
@@ -91,7 +91,7 @@ export default class Review extends Component {
                     <Form>
                         <React.Fragment>
                             <div hidden={this.state.hidden}>
-                                <Button className="buttonReview" compact onClick={this.handleReviewClick}>Add a Review</Button>
+                                <Button className="buttonReview" compact onClick={this.handleReviewClick} fluid >Add a Review</Button>
                             </div>
                             <div hidden={!this.state.hidden}>
                                 <ReviewAdd

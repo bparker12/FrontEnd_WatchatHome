@@ -112,6 +112,7 @@
       "watched": false
     },
     {
+      "id": 4,
       "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
       "Title": "Iron Man",
       "Year": "2008",
@@ -169,8 +170,7 @@
         }
       ],
       "favorite": false,
-      "watched": false,
-      "id": 4
+      "watched": true
     },
     {
       "userId": "8KzKpRdGTTfjPDxEPTBZQkc7aYw1",
@@ -475,7 +475,7 @@
       "watchId": 1,
       "imdbID": "tt0816692",
       "Title": "Interstellar",
-      "reviewText": "Top 10 movies all time!",
+      "reviewText": "Top 10 movies of all time!",
       "id": 2
     },
     {

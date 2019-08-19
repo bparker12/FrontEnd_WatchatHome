@@ -19,7 +19,7 @@ export default class WatchComp extends Component {
         if (this.state.All === true) {
             return (
                 <React.Fragment>
-                    <div>
+                    <div style={{backgroundColor: "#F0F0F0"}}>
                         <Menu color="black" size="huge" className="watchMenu" tabular>
                             <Menu.Item as="a" name="All" active={activeItem === "All"}
                                 onClick={() => this.setState({ All: true, List: false, Watched: false, Favorites: false, activeItem: "All" })} />
@@ -48,7 +48,7 @@ export default class WatchComp extends Component {
         } else if (this.state.List === true) {
             return (
                 <React.Fragment>
-                    <div>
+                    <div style={{backgroundColor: "#F0F0F0"}}>
                         <Menu color="black" size="huge" className="watchMenu" tabular>
                             <Menu.Item as="a" name="All" active={activeItem === "All"}
                                 onClick={() => this.setState({ All: true, List: false, Watched: false, Favorites: false, activeItem: "All" })} />
@@ -76,7 +76,7 @@ export default class WatchComp extends Component {
             )
         } else if (this.state.Watched === true) {
             return (
-                <React.Fragment>
+                <React.Fragment style={{backgroundColor: "#F0F0F0"}}>
                     <div>
                     <Menu color="black" size="huge" className="watchMenu" tabular>
                             <Menu.Item as="a" name="All" active={activeItem === "All"}
@@ -105,7 +105,7 @@ export default class WatchComp extends Component {
             )
         } else if (this.state.Favorites === true) {
             return (
-                <React.Fragment>
+                <React.Fragment style={{backgroundColor: "#F0F0F0"}}>
                     <div>
                     <Menu color="black" size="huge" className="watchMenu" tabular>
                             <Menu.Item as="a" name="All" active={activeItem === "All"}
