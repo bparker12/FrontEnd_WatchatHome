@@ -166,9 +166,9 @@ export default class WatchCard extends Component {
 
                         <Card.Header textAlign="center">{this.props.watchlist.Title}</Card.Header>
                         <Checkbox label={checkLabel} defaultChecked={this.props.watchlist.watched} onChange={this.watchedToggle} />
-                        <Grid columns={2}>
+                        <Grid columns={2} >
                             <Grid.Row>
-                                <Grid.Column style={{ padding: 8 }}>
+                                <Grid.Column style={{ padding: 8,}}>
                                     <Card.Description>
                                         <Card.Meta>Runtime: {this.props.watchlist.Runtime}</Card.Meta>
                                         <Card.Meta>Year: {this.props.watchlist.Year}</Card.Meta>
@@ -180,7 +180,7 @@ export default class WatchCard extends Component {
                             </Grid.Row>
                         </Grid>
                     </Card.Content>
-                    <Card.Content style={{ padding: 5 }}>
+                    <Card.Content style={{ padding: 5,}}>
                         <Review watchlist={this.props.watchlist} />
                     </Card.Content>
                 </Card>

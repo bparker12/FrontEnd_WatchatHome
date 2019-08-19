@@ -1,8 +1,9 @@
-.navBar{
+/* /* .navBar{
     display: flex;
     background-color: black;
-}
+}*/
 .Menu{
     display: flex;
     justify-content: space-between;
+    color: ligh;
 }

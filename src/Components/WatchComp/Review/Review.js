@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Button, Header, Container, Icon } from 'semantic-ui-react'
+import { Form, Button, Header, Container, Icon, Card } from 'semantic-ui-react'
 import ReviewAdd from './ReviewAdd'
 import APIManager from '../../../Modules/APIManager'
 import ReviewCard from './ReviewCard'
@@ -67,13 +67,15 @@ export default class Review extends Component {
         let headerCont = JSON.parse(sessionStorage.getItem('user')).username + "'s review:"
         if (this.state.review.find(review => review.watchId === this.props.watchlist.id)) {
             return (
-                <div>
+                <div style={{background: "#E0E1E2", borderRadius: "4px"}}>
                     <Header size="medium" content={headerCont} style={{ margin: 2}} />
                     <Container>
                         {
                             this.state.review.filter(review => review.watchId === this.props.watchlist.id).map(review =>
                             <div key={review.id}>
+                            <Card.Meta textAlign="right">
                                 <Icon name="window close" style={{ padding: "2px", margin: "0px" }} icon size="small" onClick={() => this.deleteReview("reviews", review.id)} />
+                            </Card.Meta>
                                 <div>
                                     <ReviewCard watchlist={this.props.watchlist}
                                         review={review}
@@ -91,7 +93,7 @@ export default class Review extends Component {
                     <Form>
                         <React.Fragment>
                             <div hidden={this.state.hidden}>
-                                <Button className="buttonReview" compact onClick={this.handleReviewClick}>Add a Review</Button>
+                                <Button className="buttonReview" compact onClick={this.handleReviewClick} fluid >Add a Review</Button>
                             </div>
                             <div hidden={!this.state.hidden}>
                                 <ReviewAdd
